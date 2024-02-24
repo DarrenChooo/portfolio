@@ -17,15 +17,15 @@ import {
 const components: { title: string; href: string }[] = [
   {
     title: "School Activities",
-    href: "/school-activities",
+    href: "/co-curricular/school-activities",
   },
   {
     title: "Personal Development",
-    href: "/personal-development",
+    href: "/co-curricular/personal-development",
   },
   {
     title: "Volunteer",
-    href: "/volunteer",
+    href: "/co-curricular/volunteer",
   },
 ];
 
@@ -62,7 +62,7 @@ export default function NavigationMenuDemo() {
                     <ListItem
                       key={component.title}
                       title={component.title}
-                      href={"co-curricular" + component.href}
+                      href={component.href}
                     ></ListItem>
                   ))}
                 </ul>
