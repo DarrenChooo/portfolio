@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { FaTelegramPlane } from "react-icons/fa";
 import { MdArrowOutward } from "react-icons/md";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -12,7 +13,9 @@ export default function Home() {
       <div className="flex px-16 items-center">
         <div className="flex flex-col basis-8/12 space-y-6">
           <div className="flex flex-col space-y-4">
-            <p className="text-7xl font-title">Hello!</p>
+            <p className="text-3xl absolute -mt-7 -ml-8  -rotate-12 text-lightblue font-title">
+              Hello!
+            </p>
             <div className="flex">
               <p className="text-7xl font-title pe-3">I'm</p>
               <p className="text-7xl font-title text-lightblue">Darren Choo,</p>
@@ -31,10 +34,12 @@ export default function Home() {
               Contact Me
               <FaTelegramPlane className="ml-4 h-4 w-4" />
             </Button>
-            <Button variant="ghost">
-              My Projects
-              <MdArrowOutward className="ml-4 h-4 w-4" />
-            </Button>
+            <Link href="/projects">
+              <Button variant="ghost">
+                My Projects
+                <MdArrowOutward className="ml-4 h-4 w-4" />
+              </Button>
+            </Link>
           </div>
         </div>
         <div className="basis-5/12">
