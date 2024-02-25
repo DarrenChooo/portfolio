@@ -1,7 +1,8 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import * as React from "react";
-import Link from "next/link";
+import NextLink from "next/link";
 
 import { cn } from "@/lib/utils";
 import {
@@ -29,7 +30,35 @@ const components: { title: string; href: string }[] = [
   },
 ];
 
+type LinkProps = {
+  href: string;
+  children: React.ReactNode;
+};
+
+const Link: React.FC<LinkProps> = ({ href, children }) => {
+  const pathname = usePathname();
+  const isActive = href === pathname;
+
+  return (
+    <NavigationMenuLink
+      asChild
+      active={isActive}
+      className={cn(isActive && "text-blue-500")}
+    >
+      <NextLink href={href} passHref>
+        <span className={cn(navigationMenuTriggerStyle(), "text-lg")}>
+          {children}
+        </span>
+      </NextLink>
+    </NavigationMenuLink>
+  );
+};
+
 export default function NavigationMenuDemo() {
+  const pathname = usePathname();
+
+  const isCoCurricularActive = pathname.startsWith("/co-curricular");
+
   return (
     <div className="flex justify-between p-4 px-12">
       <div className="self-start text-lg font-medium py-2">
@@ -40,20 +69,19 @@ export default function NavigationMenuDemo() {
         <NavigationMenu>
           <NavigationMenuList>
             <NavigationMenuItem>
-              <Link href="/" legacyBehavior passHref>
-                <NavigationMenuLink
-                  className={`${navigationMenuTriggerStyle()} text-lg`}
-                >
-                  About Me
-                </NavigationMenuLink>
-              </Link>
+              <Link href="/">About Me</Link>
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
         <NavigationMenu>
           <NavigationMenuList>
             <NavigationMenuItem>
-              <NavigationMenuTrigger className="text-lg">
+              <NavigationMenuTrigger
+                className={cn(
+                  "text-lg",
+                  isCoCurricularActive && "text-blue-500"
+                )}
+              >
                 Co-Curricular Activities
               </NavigationMenuTrigger>
               <NavigationMenuContent>
@@ -73,13 +101,7 @@ export default function NavigationMenuDemo() {
         <NavigationMenu>
           <NavigationMenuList>
             <NavigationMenuItem>
-              <Link href="/projects" legacyBehavior passHref>
-                <NavigationMenuLink
-                  className={`${navigationMenuTriggerStyle()} text-lg`}
-                >
-                  Projects
-                </NavigationMenuLink>
-              </Link>
+              <Link href="/projects">Projects</Link>
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
