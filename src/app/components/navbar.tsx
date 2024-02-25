@@ -3,6 +3,7 @@
 import { usePathname } from "next/navigation";
 import * as React from "react";
 import NextLink from "next/link";
+import { FaLinkedinIn } from "react-icons/fa";
 
 import { cn } from "@/lib/utils";
 import {
@@ -46,7 +47,9 @@ const Link: React.FC<LinkProps> = ({ href, children }) => {
       className={cn(isActive && "text-blue-500")}
     >
       <NextLink href={href} passHref>
-        <span className={cn(navigationMenuTriggerStyle(), "text-lg")}>
+        <span
+          className={cn(navigationMenuTriggerStyle(), "text-lg font-semibold")}
+        >
           {children}
         </span>
       </NextLink>
@@ -60,12 +63,12 @@ export default function NavigationMenuDemo() {
   const isCoCurricularActive = pathname.startsWith("/co-curricular");
 
   return (
-    <div className="flex justify-between p-4 px-12">
+    <div className="flex justify-between p-4">
       <div className="self-start text-lg font-medium py-2">
-        <p>Darren Choo</p>
+        <p className="font-bold">Darren Choo</p>
       </div>
 
-      <div className="flex">
+      <div className="flex space-x-4">
         <NavigationMenu>
           <NavigationMenuList>
             <NavigationMenuItem>
@@ -78,8 +81,8 @@ export default function NavigationMenuDemo() {
             <NavigationMenuItem>
               <NavigationMenuTrigger
                 className={cn(
-                  "text-lg",
-                  isCoCurricularActive && "text-blue-500"
+                  "text-lg font-semibold",
+                  isCoCurricularActive && "text-lightblue2"
                 )}
               >
                 Co-Curricular Activities
@@ -113,14 +116,7 @@ export default function NavigationMenuDemo() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-5 w-5"
-            fill="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z" />
-          </svg>
+          <FaLinkedinIn className="h-6 w-6 hover:text-lightblue" />
         </a>
       </div>
     </div>
