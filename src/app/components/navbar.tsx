@@ -3,7 +3,9 @@
 import { usePathname } from "next/navigation";
 import * as React from "react";
 import NextLink from "next/link";
-import { FaLinkedinIn } from "react-icons/fa";
+import { FaLinkedinIn, FaTelegramPlane } from "react-icons/fa";
+import { TbBrandGithubFilled } from "react-icons/tb";
+import { IoIosMail } from "react-icons/io";
 
 import { cn } from "@/lib/utils";
 import {
@@ -110,13 +112,27 @@ export default function NavigationMenuDemo() {
         </NavigationMenu>
       </div>
 
-      <div className="ps-24 py-2">
+      <div className="py-2 flex space-x-6">
+        <a
+          href="mailto:darrenchoojh88@email.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <IoIosMail className="h-6 w-6 hover:text-lightblue" />
+        </a>
         <a
           href="https://www.linkedin.com/in/darren-choo-921654239/"
           target="_blank"
           rel="noopener noreferrer"
         >
           <FaLinkedinIn className="h-6 w-6 hover:text-lightblue" />
+        </a>
+        <a
+          href="https://github.com/DarrenChooo"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <TbBrandGithubFilled className="h-6 w-6 hover:text-lightblue" />
         </a>
       </div>
     </div>
