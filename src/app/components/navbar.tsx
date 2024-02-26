@@ -110,7 +110,7 @@ export default function NavigationMenuDemo() {
         </NavigationMenu>
       </div>
 
-      <div className="py-2">
+      <div className="ps-24 py-2">
         <a
           href="https://www.linkedin.com/in/darren-choo-921654239/"
           target="_blank"
