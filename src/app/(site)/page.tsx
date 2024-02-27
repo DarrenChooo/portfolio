@@ -14,7 +14,7 @@ export default function Home() {
       <Navbar />
       <div className="px-16 py-8">
         <div className="flex items-center">
-          <div className="flex flex-col basis-8/12 space-y-6">
+          <div className="flex flex-col basis-7/12 space-y-6">
             <div className="flex flex-col space-y-4">
               <p className="text-2xl absolute -mt-5 -ml-6 -rotate-12 text-lightblue font-title">
                 Hello!
@@ -66,7 +66,7 @@ export default function Home() {
               <p className="text-2xl absolute -ml-10 -mt-8 -rotate-12 text-lightblue font-title">
                 About Me
               </p>
-              <p className="text-6xl font-title pe-3">Introduction</p>
+              <p className="text-6xl font-title pe-3">Introduction </p>
               <div className="flex">
                 <hr className="w-7 h-1 mt-3 bg-lightblue border-0 rounded"></hr>
                 <p className="text-lg px-4 text-wrap basis-10/12">
