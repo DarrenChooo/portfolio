@@ -29,7 +29,12 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="rounded-full w-[430px] h-[430px]  flex items-center border-lightblue border-2 border-dashed">
+          <div className="min-w-[450px] max-w-[450px] h-[450px] relative flex items-center">
+            <div
+              className="rounded-full w-[430px] h-[430px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border-lightblue border-2 border-dashed"
+              role="presentation"
+              aria-hidden
+            />
             <Image
               src="/images/website.png"
               alt="Picture of Me"
@@ -38,7 +43,7 @@ export default function Home() {
               quality={100}
               width={500}
               height={500}
-              className="rounded-md overflow-visible w-[450px] h-[450px] ring ring-blue-400 ring-opacity-20 "
+              className="rounded-md overflow-visible w-[450px] h-[450px] ring ring-blue-400 ring-opacity-20 z-10"
             />
           </div>
         </div>
