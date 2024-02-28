@@ -7,6 +7,7 @@ import { FaCode, FaComputer } from "react-icons/fa6";
 import { FaDatabase } from "react-icons/fa6";
 import { IoIosCloud } from "react-icons/io";
 import Link from "next/link";
+import { TbBrandGithubFilled } from "react-icons/tb";
 
 export default function Home() {
   return (
@@ -29,7 +30,7 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="min-w-[450px] max-w-[450px] h-[450px]  relative flex items-center">
+          <div className="min-w-[450px] max-w-[450px] h-[450px] relative flex justify-center items-center">
             <div
               className="rounded-full w-[418px] h-[418px] absolute  border-lightblue border-4 border-spacing-10 border-dashed"
               role="presentation"
@@ -61,6 +62,20 @@ export default function Home() {
                 her personal and <br />
                 professional journey.
               </p>
+              <div className="flex space-x-4">
+                <Link href="/projects">
+                  <Button>
+                    Visit Website
+                    <MdArrowOutward className="ml-4 h-4 w-4" />
+                  </Button>
+                </Link>
+                <Link href="/projects">
+                  <Button variant="ghost">
+                    View Repository
+                    <TbBrandGithubFilled className="ml-4 h-4 w-4" />
+                  </Button>
+                </Link>
+              </div>
             </div>
           </div>
           <div className="">
