@@ -5,8 +5,8 @@ const projArr: Omit<ProjProps, "index">[] = [
   {
     title: "Personal Portfolio Project",
     desc: "A client's minimalist portfolio website, showcasing her works and milestones. This website is developed with TypeScript and Tailwind CSS, and deployed on Vercel, presenting a glimpse into her personal and professional journey.",
-    demoUrl: "/",
-    repoUrl: "/",
+    demoUrl: "https://sarah-portfolio-sable.vercel.app/",
+    repoUrl: "https://github.com/DarrenCampy/sarahPortfolio",
     imageUrl: "/images/projects/firstproj.png",
   },
   {
