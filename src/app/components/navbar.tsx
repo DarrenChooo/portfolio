@@ -18,7 +18,7 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 
-const components: { title: string; href: string }[] = [
+const ccaObj: { title: string; href: string }[] = [
   {
     title: "School Activities",
     href: "/co-curricular/school-activities",
@@ -30,6 +30,17 @@ const components: { title: string; href: string }[] = [
   {
     title: "Volunteer",
     href: "/co-curricular/volunteer",
+  },
+];
+
+const projectObj: { title: string; href: string }[] = [
+  {
+    title: "Technology Project",
+    href: "/projects/technology-project",
+  },
+  {
+    title: "Design Project",
+    href: "/projects/design-project",
   },
 ];
 
@@ -49,7 +60,7 @@ const Link: React.FC<LinkProps> = ({ href, children }) => {
       className={cn(
         navigationMenuTriggerStyle(),
         "hover:text-lightblue2 focus:text-lightblue2 !bg-transparent",
-        isActive && "text-lightblue"
+        isActive && "text-black"
       )}
     >
       <NextLink href={href} passHref>
@@ -63,6 +74,7 @@ export default function NavigationMenuDemo() {
   const pathname = usePathname();
 
   const isCoCurricularActive = pathname.startsWith("/co-curricular");
+  const isProjectActive = pathname.startsWith("/projects");
 
   return (
     <div className="flex justify-between p-4">
@@ -91,11 +103,11 @@ export default function NavigationMenuDemo() {
               </NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="flex flex-wrap flex-col gap-3 p-3 text-nowrap">
-                  {components.map((component) => (
+                  {ccaObj.map((ccaObj) => (
                     <ListItem
-                      key={component.title}
-                      title={component.title}
-                      href={component.href}
+                      key={ccaObj.title}
+                      title={ccaObj.title}
+                      href={ccaObj.href}
                     ></ListItem>
                   ))}
                 </ul>
@@ -106,7 +118,25 @@ export default function NavigationMenuDemo() {
         <NavigationMenu>
           <NavigationMenuList>
             <NavigationMenuItem>
-              <Link href="/projects">Projects</Link>
+              <NavigationMenuTrigger
+                className={cn(
+                  "text-lg font-semibold",
+                  isProjectActive && "text-lightblue"
+                )}
+              >
+                Projects
+              </NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <ul className="flex flex-wrap flex-col gap-3 p-3 text-nowrap">
+                  {projectObj.map((projectObj) => (
+                    <ListItem
+                      key={projectObj.title}
+                      title={projectObj.title}
+                      href={projectObj.href}
+                    ></ListItem>
+                  ))}
+                </ul>
+              </NavigationMenuContent>
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
