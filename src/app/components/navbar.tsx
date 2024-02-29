@@ -46,14 +46,14 @@ const Link: React.FC<LinkProps> = ({ href, children }) => {
     <NavigationMenuLink
       asChild
       active={isActive}
-      className={cn(isActive && "text-blue-500")}
+      className={cn(
+        navigationMenuTriggerStyle(),
+        "hover:text-lightblue2 focus:text-lightblue2 !bg-transparent",
+        isActive && "text-lightblue"
+      )}
     >
       <NextLink href={href} passHref>
-        <span
-          className={cn(navigationMenuTriggerStyle(), "text-lg font-semibold")}
-        >
-          {children}
-        </span>
+        <span className={cn("text-lg font-semibold")}>{children}</span>
       </NextLink>
     </NavigationMenuLink>
   );
@@ -73,7 +73,7 @@ export default function NavigationMenuDemo() {
       <div className="flex space-x-4">
         <NavigationMenu>
           <NavigationMenuList>
-            <NavigationMenuItem>
+            <NavigationMenuItem asChild>
               <Link href="/">About Me</Link>
             </NavigationMenuItem>
           </NavigationMenuList>
@@ -84,7 +84,7 @@ export default function NavigationMenuDemo() {
               <NavigationMenuTrigger
                 className={cn(
                   "text-lg font-semibold",
-                  isCoCurricularActive && "text-lightblue2"
+                  isCoCurricularActive && "text-lightblue"
                 )}
               >
                 Co-Curricular Activities
@@ -143,6 +143,8 @@ const ListItem = React.forwardRef<
   React.ElementRef<"a">,
   React.ComponentPropsWithoutRef<"a">
 >(({ className, title, children, ...props }, ref) => {
+  const pathname = usePathname();
+
   return (
     <li>
       <NavigationMenuLink asChild>
@@ -154,10 +156,14 @@ const ListItem = React.forwardRef<
           )}
           {...props}
         >
-          <div className="text-lg font-medium leading-none">{title}</div>
-          <p className="line-clamp-2 text-lg leading-snug text-muted-foreground">
-            {children}
-          </p>
+          <div
+            className={cn(
+              "text-lg font-medium leading-none hover:text-lightblue2",
+              pathname === props.href && "text-lightblue"
+            )}
+          >
+            {title}
+          </div>
         </a>
       </NavigationMenuLink>
     </li>

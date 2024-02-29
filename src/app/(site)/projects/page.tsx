@@ -1,13 +1,29 @@
-import Navbar from "../../components/navbar";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
-import { FaTelegramPlane, FaTools } from "react-icons/fa";
-import { MdArrowOutward } from "react-icons/md";
-import { FaCode, FaComputer } from "react-icons/fa6";
-import { FaDatabase } from "react-icons/fa6";
-import { IoIosCloud } from "react-icons/io";
-import Link from "next/link";
-import { TbBrandGithubFilled } from "react-icons/tb";
+import { Project, ProjProps } from "../../components/project";
+
+const projArr: Omit<ProjProps, "index">[] = [
+  {
+    title: "Personal Portfolio Project",
+    desc: "A client's minimalist portfolio website, showcasing her works and milestones. This website is developed with TypeScript and Tailwind CSS, and deployed on Vercel, presenting a glimpse into her personal and professional journey.",
+    demoUrl: "/",
+    repoUrl: "/",
+    imageUrl: "/images/projects/firstproj.png",
+  },
+  {
+    title: "Personal Portfolio Project",
+    desc: "A client's minimalist portfolio website, showcasing her works and milestones. This website is developed with TypeScript and Tailwind CSS, and deployed on Vercel, presenting a glimpse into her personal and professional journey.",
+    demoUrl: "/",
+    repoUrl: "/",
+    imageUrl: "/images/projects/firstproj.png",
+  },
+  {
+    title: "Personal Portfolio Project",
+    desc: "A client's minimalist portfolio website, showcasing her works and milestones. This website is developed with TypeScript and Tailwind CSS, and deployed on Vercel, presenting a glimpse into her personal and professional journey.",
+    demoUrl: "/",
+    repoUrl: "/",
+    imageUrl: "/images/projects/firstproj.png",
+  },
+];
 
 export default function Home() {
   return (
@@ -46,47 +62,9 @@ export default function Home() {
           />
         </div>
       </div>
-      <div className="flex py-28">
-        <div className="flex basis-7/12">
-          <div className="basis-3/4 space-y-6">
-            <p className="text-3xl text-lightblue">Project 1</p>
-            <p className="text-3xl font-semibold">Personal Portfolio Project</p>
-            <p className="text-wrap text-lg">
-              A client's minimalist portfolio website, showcasing her works and
-              milestones. This website is developed with TypeScript and Tailwind
-              CSS, and deployed on Vercel, presenting a glimpse into her
-              personal and <br />
-              professional journey.
-            </p>
-            <div className="flex space-x-4">
-              <Link href="/projects">
-                <Button>
-                  Visit Website
-                  <MdArrowOutward className="ml-4 h-4 w-4" />
-                </Button>
-              </Link>
-              <Link href="/projects">
-                <Button variant="ghost">
-                  View Repository
-                  <TbBrandGithubFilled className="ml-4 h-4 w-4" />
-                </Button>
-              </Link>
-            </div>
-          </div>
-        </div>
-        <div className="">
-          <Image
-            src="/images/projects/firstproj.png"
-            alt="Picture of Me"
-            layout="responsive"
-            priority
-            quality={100}
-            width={500}
-            height={500}
-            className="rounded-md w-[450px] shadow-md h-[450px]"
-          />
-        </div>
-      </div>
+      {projArr.map((proj, index) => (
+        <Project key={index} index={index} {...proj} />
+      ))}
     </div>
   );
 }

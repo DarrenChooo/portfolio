@@ -6,8 +6,6 @@ import { MdArrowOutward } from "react-icons/md";
 
 export default function Home() {
   return (
-    <div className="px-12">
-      <Navbar />
       <div className="flex items-center flex-wrap justify-center p-20">
         <div className="basis-1/3">
           <Image
@@ -38,6 +36,5 @@ export default function Home() {
           </Link>
         </div>
       </div>
-    </div>
   );
 }

@@ -35,12 +35,12 @@ export default function Home() {
               Contact Me
               <FaTelegramPlane className="ml-4 h-4 w-4" />
             </Button>
-            <Link href="/projects">
-              <Button variant="ghost">
+            <Button variant="ghost" asChild>
+              <Link href="/projects">
                 My Projects
                 <MdArrowOutward className="ml-4 h-4 w-4" />
-              </Button>
-            </Link>
+              </Link>
+            </Button>
           </div>
         </div>
         <div className="basis-5/12">
