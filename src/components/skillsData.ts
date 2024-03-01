@@ -4,13 +4,13 @@ export type Skill = {
   url: string;
 };
 
-export type SkillSection = {
+export type SkillProps = {
   section: string;
   path: string;
   frameworks: Skill[];
 };
 
-export const technicalSkillsData: SkillSection[] = [
+export const technicalSkillsData: SkillProps[] = [
   {
     section: "Programming Languages",
     path: "language",
@@ -162,7 +162,7 @@ export const technicalSkillsData: SkillSection[] = [
   },
 ];
 
-export const designSkillsData: SkillSection[] = [
+export const designSkillsData: SkillProps[] = [
   {
     section: "Design Softwares",
     path: "design",
@@ -190,4 +190,3 @@ export const designSkillsData: SkillSection[] = [
     ],
   },
 ];
-

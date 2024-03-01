@@ -4,6 +4,7 @@ import Link from "next/link";
 import { FaTelegramPlane } from "react-icons/fa";
 import { MdArrowOutward } from "react-icons/md";
 import Skills from "../../components/skill";
+import Academic from "../../components/academic";
 
 export default function Home() {
   return (
@@ -73,86 +74,7 @@ export default function Home() {
           <Skills></Skills>
         </div>
         <div className="basis-5/12">
-          <p className="text-4xl font-title pt-9 pb-7">Education</p>
-          <>
-            <hr className=" w-auto h-0.5 mt-3 bg-lightblue border-0 rounded"></hr>
-            <div className="py-4 space-y-4 pb-8">
-              <div className="flex justify-between text-lg font-semibold ">
-                <p> 2021 - Present </p>
-                <p>Singapore Polytechnic</p>
-              </div>
-              <p>
-                Diploma in Information Technology, <br />
-                Specialised in User Interface and User Experience <br />
-                <br />
-                Cumulative Grade Point Average: 3.85
-              </p>
-            </div>
-          </>
-          <>
-            <hr className=" w-auto h-0.5 mt-3 bg-lightblue border-0 rounded"></hr>
-            <div className="py-4 space-y-4 pb-8">
-              <div className="flex justify-between text-lg font-semibold ">
-                <p> 2020 - 2021 </p>
-                <p>Singapore Polytechnic</p>
-              </div>
-              <p>Polytechnic Foundation Programme</p>
-            </div>
-          </>
-          <>
-            <hr className=" w-auto h-0.5 mt-3 bg-lightblue border-0 rounded"></hr>
-            <div className="py-4 space-y-4">
-              <div className="flex justify-between text-lg font-semibold ">
-                <p> 2016 - 2019 </p>
-                <p>Dunman Secondary School</p>
-              </div>
-              <p>
-                GCE N(A) Level
-                <br /> <br />
-                ELMAB3 (English, Mathematics, Best 3 Subjects): 8 Raw
-              </p>
-            </div>
-          </>
-          <p className="text-4xl font-title pt-16 pb-7">Achievements</p>
-          <>
-            <hr className=" w-auto h-0.5 mt-3 bg-lightblue border-0 rounded"></hr>
-            <div className="py-4 space-y-4 pb-8">
-              <div className="flex justify-between text-lg font-semibold ">
-                <p>2023</p>
-                <p>Edusave Merit Bursary Award</p>
-              </div>
-              <p>
-                Students within the top 25% of their school’s level and course
-                in academic performance have demonstrated good conduct.
-              </p>
-            </div>
-          </>
-          <>
-            <hr className=" w-auto h-0.5 mt-3 bg-lightblue border-0 rounded"></hr>
-            <div className="py-4 space-y-4 pb-8">
-              <div className="flex justify-between text-lg font-semibold ">
-                <p>2022</p>
-                <p>Edusave Merit Bursary Award</p>
-              </div>
-              <p>
-                Students within the top 25% of their school’s level and course
-                in academic performance have demonstrated good conduct.
-              </p>
-            </div>
-          </>
-          <>
-            <hr className=" w-auto h-0.5 mt-3 bg-lightblue border-0 rounded"></hr>
-            <div className="py-4 space-y-4 pb-8">
-              <div className="flex justify-between text-lg font-semibold ">
-                <p>2022</p>
-                <p>Director's Honour Roll (AY21/22)</p>
-              </div>
-              <p>
-                Achieved top 10% of cohort in terms of academic performance, and
-                have an exemplary personal record,
-              </p>
-            </div>
-          </>
+          <Academic></Academic>
         </div>
       </div>
     </div>

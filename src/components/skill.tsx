@@ -4,15 +4,14 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
 import React from "react";
-import { SkillSection } from "./skills"; // Importing types from skills.ts
-import { technicalSkillsData, designSkillsData } from "./skills"; // Importing data from skills.ts
+import { technicalSkillsData, designSkillsData, SkillProps } from "./skillsData"; 
 
 const Skills: React.FC = () => {
   return (
     <>
       <div className="py-8">
         <p className="text-4xl font-title mb-8">Technical Skills</p>
-        {technicalSkillsData.map((section: SkillSection) => (
+        {technicalSkillsData.map((section: SkillProps) => (
           <div key={section.section} className="flex flex-col py-5">
             <p className="text-2xl mb-4 text-lightblue font-semibold">
               {section.section}
@@ -43,7 +42,7 @@ const Skills: React.FC = () => {
       </div>
       <div className="py-8">
         <p className="text-4xl font-title mb-8">Design Skills</p>
-        {designSkillsData.map((section: SkillSection) => (
+        {designSkillsData.map((section: SkillProps) => (
           <div key={section.section} className="flex flex-col py-5">
             <p className="text-2xl mb-4 text-lightblue font-semibold">
               {section.section}
