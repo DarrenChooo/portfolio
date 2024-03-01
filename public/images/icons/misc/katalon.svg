@@ -1,8 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="256px" height="393px" viewBox="0 0 256 393" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid">
-    <title>Katalon</title>
-    <g>
-        <polygon fill="#19D89F" points="256 261.406518 127.998039 261.406518 127.998039 392.131834 256 392.131834"></polygon>
-        <polygon fill="#000000" points="128.00147 0 0 130.725316 0 261.450632 128.00147 261.450632 255.959153 130.725316 255.959153 0"></polygon>
-    </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1080" zoomAndPan="magnify" viewBox="0 0 810 809.999993" height="1080" preserveAspectRatio="xMidYMid meet" version="1.0"><defs><clipPath id="865e1cf656"><path d="M 325 482 L 478 482 L 478 638.65625 L 325 638.65625 Z M 325 482 " clip-rule="nonzero"/></clipPath><clipPath id="9cf029c723"><path d="M 173.023438 171.40625 L 478 171.40625 L 478 483 L 173.023438 483 Z M 173.023438 171.40625 " clip-rule="nonzero"/></clipPath></defs><g clip-path="url(#865e1cf656)"><path fill="#19d89f" d="M 477.726562 482.574219 L 325.378906 482.574219 L 325.378906 638.1875 L 477.726562 638.1875 Z M 477.726562 482.574219 " fill-opacity="1" fill-rule="nonzero"/></g><g clip-path="url(#9cf029c723)"><path fill="#000000" d="M 325.382812 171.40625 L 173.03125 327.015625 L 173.03125 482.628906 L 325.382812 482.628906 L 477.679688 327.015625 L 477.679688 171.40625 Z M 325.382812 171.40625 " fill-opacity="1" fill-rule="nonzero"/></g></svg>

@@ -5,7 +5,6 @@ import { FaTelegramPlane } from "react-icons/fa";
 import { MdArrowOutward } from "react-icons/md";
 import Skills from "../../components/skill";
 
-
 export default function Home() {
   return (
     <div className="px-16 py-8">
@@ -71,44 +70,7 @@ export default function Home() {
               </p>
             </div>
           </div>
-
-          <div className="py-8">
-            <p className="text-4xl font-title mb-8">Technical Skills</p>
-            <Skills></Skills>
-            <div className="flex items-center flex-wrap pb-8">
-              <p className="text-2xl text-lightblue font-semibold">
-                Database Softwares
-              </p>
-              {/* <p className="mt-4 text-lg basis-full">
-                MySQL, PostgreSQL, MongoDB
-              </p> */}
-            </div>
-            <div className="flex items-center flex-wrap pb-8">
-              <p className="text-2xl text-lightblue font-semibold">
-                Cloud Services
-              </p>
-              {/* <p className="mt-4 text-lg basis-full">Amazon Web Services</p> */}
-            </div>
-            <div className="flex items-center flex-wrap pb-8">
-              <p className="text-2xl text-lightblue font-semibold">
-                Miscellaneous Tools
-              </p>
-              {/* <p className="mt-4 text-lg basis-full">
-                REST APIs, Agile Methodologies, Object Oriented Programming
-              </p> */}
-            </div>
-          </div>
-          <div className="py-8">
-            <p className="text-4xl font-title mb-8">Design Skills</p>
-            <div className="flex items-center flex-wrap pb-8">
-              <p className="text-2xl text-lightblue font-semibold">
-                Design Softwares
-              </p>
-              {/* <p className="mt-4 text-lg basis-full">
-                Adobe XD, Figma, Adobe Photoshop, Adobe Illustrator
-              </p> */}
-            </div>
-          </div>
+          <Skills></Skills>
         </div>
         <div className="basis-5/12">
           <p className="text-4xl font-title pt-9 pb-7">Education</p>
