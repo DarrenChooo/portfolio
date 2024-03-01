@@ -110,6 +110,11 @@ export const technicalSkillsData: SkillProps[] = [
         icon: "aws",
         url: "https://aws.amazon.com/",
       },
+      {
+        name: "Microsoft Azure",
+        icon: "azure",
+        url: "https://azure.microsoft.com/en-us",
+      },
     ],
   },
   {

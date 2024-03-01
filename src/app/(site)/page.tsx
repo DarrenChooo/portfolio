@@ -45,11 +45,12 @@ export default function Home() {
           <Image
             src="/images/me2.png"
             alt="Picture of Me"
-            layout="responsive"
-            priority
-            quality={100}
             width={400}
             height={400}
+            style={{
+              width: "100%",
+              height: "auto",
+            }}
             className="rounded-full "
           />
         </div>
@@ -71,10 +72,12 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <Skills></Skills>
+          <div className="w-3/4">
+            <Academic></Academic>
+          </div>
         </div>
         <div className="basis-5/12">
-          <Academic></Academic>
+          <Skills></Skills>
         </div>
       </div>
     </div>
