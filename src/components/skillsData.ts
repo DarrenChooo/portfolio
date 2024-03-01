@@ -124,22 +124,6 @@ export const technicalSkillsData: SkillProps[] = [
     ],
   },
   {
-    section: "CSS Libraries",
-    path: "css",
-    frameworks: [
-      {
-        name: "Tailwind CSS",
-        icon: "tailwind",
-        url: "https://tailwindcss.com/",
-      },
-      {
-        name: "Bootstrap",
-        icon: "bootstrap",
-        url: "https://getbootstrap.com/",
-      },
-    ],
-  },
-  {
     section: "Miscellaneous Tools",
     path: "misc",
     frameworks: [
