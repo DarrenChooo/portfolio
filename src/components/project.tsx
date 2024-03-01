@@ -30,10 +30,8 @@ export const Project: FC<ProjProps> = ({
         "flex-row-reverse justify-between": !isEven,
       })}
     >
-      <div
-        className={cn("flex", isEven ? "basis-3/5" : "basis-5/12")}
-      >
-        <div className={cn("space-y-6", isEven && 'basis-3/4')}>
+      <div className={cn("flex", isEven ? "basis-3/5" : "basis-5/12")}>
+        <div className={cn("space-y-6", isEven && "basis-3/4")}>
           <p className="text-3xl text-lightblue">Project {index + 1}</p>
           <p className="text-3xl font-semibold">{title}</p>
           <p className="text-wrap text-lg">{desc}</p>
@@ -47,7 +45,7 @@ export const Project: FC<ProjProps> = ({
               </Button>
             ) : null}
             {repoUrl ? (
-              <Button variant="ghost" asChild>
+              <Button variant={demoUrl ? "ghost" : "default"} asChild>
                 <Link href={repoUrl}>
                   View Repository
                   <TbBrandGithubFilled className="ml-4 h-4 w-4" />
