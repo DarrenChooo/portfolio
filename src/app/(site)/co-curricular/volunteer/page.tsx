@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import Navbar from "../../../components/navbar";
+import Navbar from "../../../../components/navbar";
 import Image from "next/image";
 import Link from "next/link";
 import { MdArrowOutward } from "react-icons/md";

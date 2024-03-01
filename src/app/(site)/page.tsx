@@ -1,12 +1,10 @@
-import Navbar from "../components/navbar";
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { FaTelegramPlane, FaTools } from "react-icons/fa";
-import { MdArrowOutward } from "react-icons/md";
-import { FaCode, FaComputer } from "react-icons/fa6";
-import { FaDatabase } from "react-icons/fa6";
-import { IoIosCloud } from "react-icons/io";
+import Image from "next/image";
 import Link from "next/link";
+import { FaTelegramPlane } from "react-icons/fa";
+import { MdArrowOutward } from "react-icons/md";
+import Skills from "../../components/skill";
+
 
 export default function Home() {
   return (
@@ -62,7 +60,7 @@ export default function Home() {
             <p className="text-2xl absolute -ml-10 -mt-8 -rotate-12 text-lightblue font-title">
               About Me
             </p>
-            <p className="text-6xl font-title pe-3">Introduction </p>
+            <p className="text-6xl font-title pe-3">Introduction</p>
             <div className="flex">
               <hr className="w-7 h-1 mt-3 bg-lightblue border-0 rounded"></hr>
               <p className="text-lg px-4 text-wrap basis-10/12">
@@ -73,55 +71,42 @@ export default function Home() {
               </p>
             </div>
           </div>
+
           <div className="py-8">
             <p className="text-4xl font-title mb-8">Technical Skills</p>
+            <Skills></Skills>
             <div className="flex items-center flex-wrap pb-8">
-              <div className="w-16 h-16 rounded-full flex items-center justify-center bg-beige">
-                <FaCode className="w-7 h-7 text-white" />
-              </div>
-              <p className="text-2xl ms-8 font-semibold">
-                Programming Language
+              <p className="text-2xl text-lightblue font-semibold">
+                Database Softwares
               </p>
-              <p className="mt-4 text-lg basis-full">
-                Javascript, Typescript, C++, HTML, CSS, Python
-              </p>
-            </div>
-            <div className="flex items-center flex-wrap pb-8">
-              <div className="w-16 h-16 rounded-full flex items-center justify-center bg-beige">
-                <FaDatabase className="w-7 h-7 text-white" />
-              </div>
-              <p className="text-2xl ms-8 font-semibold">Database Softwares</p>
-              <p className="mt-4 text-lg basis-full">
+              {/* <p className="mt-4 text-lg basis-full">
                 MySQL, PostgreSQL, MongoDB
+              </p> */}
+            </div>
+            <div className="flex items-center flex-wrap pb-8">
+              <p className="text-2xl text-lightblue font-semibold">
+                Cloud Services
               </p>
+              {/* <p className="mt-4 text-lg basis-full">Amazon Web Services</p> */}
             </div>
             <div className="flex items-center flex-wrap pb-8">
-              <div className="w-16 h-16 rounded-full flex items-center justify-center bg-beige">
-                <IoIosCloud className="w-7 h-7 text-white" />
-              </div>
-              <p className="text-2xl ms-8 font-semibold">Cloud Services</p>
-              <p className="mt-4 text-lg basis-full">Amazon Web Services</p>
-            </div>
-            <div className="flex items-center flex-wrap pb-8">
-              <div className="w-16 h-16 rounded-full flex items-center justify-center bg-beige">
-                <FaTools className="w-7 h-7 text-white" />
-              </div>
-              <p className="text-2xl ms-8 font-semibold">Miscellaneous Tools</p>
-              <p className="mt-4 text-lg basis-full">
+              <p className="text-2xl text-lightblue font-semibold">
+                Miscellaneous Tools
+              </p>
+              {/* <p className="mt-4 text-lg basis-full">
                 REST APIs, Agile Methodologies, Object Oriented Programming
-              </p>
+              </p> */}
             </div>
           </div>
           <div className="py-8">
             <p className="text-4xl font-title mb-8">Design Skills</p>
             <div className="flex items-center flex-wrap pb-8">
-              <div className="w-16 h-16 rounded-full flex items-center justify-center bg-beige">
-                <FaComputer className="w-7 h-7 text-white" />
-              </div>
-              <p className="text-2xl ms-8 font-semibold">Design Softwares</p>
-              <p className="mt-4 text-lg basis-full">
-                Adobe XD, Figma, Adobe Photoshop, Adobe Illustrator
+              <p className="text-2xl text-lightblue font-semibold">
+                Design Softwares
               </p>
+              {/* <p className="mt-4 text-lg basis-full">
+                Adobe XD, Figma, Adobe Photoshop, Adobe Illustrator
+              </p> */}
             </div>
           </div>
         </div>

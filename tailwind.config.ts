@@ -22,9 +22,9 @@ const config = {
         title: ["Barlow Semi Condensed"],
       },
       colors: {
-        lightblue: "#5783F5",
+        lightblue: "#4d7cf4",
         lightblue2: "#2f64eb",
-        beige: "#e0c8b1",
+        beige: "#fce2d2",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

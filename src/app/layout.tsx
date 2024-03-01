@@ -1,4 +1,4 @@
-import Navbar from "./components/navbar";
+import Navbar from "../components/navbar";
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";

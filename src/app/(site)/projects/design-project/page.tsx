@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Project, ProjProps } from "../../../components/project";
+import { Project, ProjProps } from "../../../../components/project";
 
 const projArr: Omit<ProjProps, "index">[] = [
   {
