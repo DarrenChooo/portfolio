@@ -33,14 +33,14 @@ export default function Home() {
           <p className="text-2xl absolute -ml-10 -mt-3 -rotate-12 text-lightblue font-title">
             Projects
           </p>
-          <p className="text-6xl font-title pe-3">Technology Projects</p>
+          <p className="text-6xl font-title pe-3">Design Projects</p>
           <div className="flex">
             <hr className="w-7 h-1 mt-3 bg-lightblue border-0 rounded"></hr>
             <p className="text-lg px-4 text-wrap basis-3/4">
-              Here are the projects that I have worked on through the start of
-              my journey as a developer, consisting a plethora of pursuits that
-              enabled me to explore various facets of software and web
-              development.
+              Here are the design projects I've embarked on, each representing a
+              unique exploration into the diverse realms of creativity , where
+              I've delved into various aspects of visual design and user
+              experience.
             </p>
           </div>
         </div>
