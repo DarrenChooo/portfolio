@@ -27,7 +27,7 @@ export const technicalSkillsData: SkillProps[] = [
       },
       {
         name: "C#",
-        icon: "CS",
+        icon: "cs",
         url: "https://learn.microsoft.com/en-us/dotnet/csharp",
       },
       {
