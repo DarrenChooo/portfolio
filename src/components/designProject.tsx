@@ -26,7 +26,7 @@ export const Project: FC<ProjProps> = ({
   const isEven = index % 2 === 0;
   return (
     <div
-      className={cn("flex pt-28 items-center last:py-28", {
+      className={cn("flex py-14 items-center first: last:py-28", {
         "flex-row-reverse justify-between": !isEven,
       })}
     >

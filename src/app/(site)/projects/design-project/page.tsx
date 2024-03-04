@@ -1,7 +1,35 @@
 import Image from "next/image";
 import { Project, ProjProps } from "../../../../components/designProject";
 
-const projArr: Omit<ProjProps, "index">[] = [
+const photoshopProjArr: Omit<ProjProps, "index">[] = [
+  {
+    title: "Make Every Second Count 🕒",
+    desc: "A banner designed based on TikTok slogan 'Make every second count', the number 60 in the banner represents that it only takes up to 60 seconds of short clips to inspire others. Also, creating a vibrant burst of colours using TikTok colour palette.",
+    imageUrl: "/images/infographics/dvde/tiktok.png",
+  },
+  {
+    title: "Ignition in Portfolio 🔥",
+    desc: "A portfolio website showcasing my photoshop skills on how I can blend design tools into my personal website. Furthermore, embracing my creativity on coming out with a unique take in portfolio websites.",
+    imageUrl: [
+      "/images/infographics/dvde/portfolio-homepage.png",
+      "/images/infographics/dvde/portfolio-about.png",
+    ],
+  },
+  {
+    title: "A Fluttering Refreshment 🦋",
+    desc: "An infographic between Pepsi and butterflies. With every sip, experience a symphony of flavours, feeling the vibrant energy dance across your taste buds. Utilising photoshop tools to bring the spotlight on Pepsi - That's What I Like.",
+    portrait: true,
+    imageUrl: "/images/infographics/dvde/pepsi.png",
+  },
+  {
+    title: "Humans and Machine 🤖",
+    desc: "Using photoshop tools like Polygonal Lasso tool, Layer Mask tool, etc. A poster depicting how the use of virtual reality will change us in the forseeable future.",
+    portrait: true,
+    imageUrl: "/images/infographics/dvde/vr-headset.png",
+  },
+];
+
+const illustratorProjArr: Omit<ProjProps, "index">[] = [
   {
     title: "Make Every Second Count 🕒",
     desc: "A banner designed based on TikTok slogan 'Make every second count', the number 60 in the banner represents that it only takes up to 60 seconds of short clips to inspire others. Also, creating a vibrant burst of colours using TikTok colour palette.",
@@ -30,7 +58,6 @@ const projArr: Omit<ProjProps, "index">[] = [
 ];
 
 export default function Home() {
-
   return (
     <div className="px-16 py-8">
       <div className="flex items-center justify-between">
@@ -64,7 +91,13 @@ export default function Home() {
           />
         </div>
       </div>
-      {projArr.map((proj, index) => (
+      <p className="text-6xl font-title pt-28 ">Photoshop Artworks</p>
+      {photoshopProjArr.map((proj, index) => (
+        <Project key={index} index={index} {...proj} />
+      ))}
+
+      <p className="text-6xl font-title pt-28 ">Illustrator Artworks</p>
+      {illustratorProjArr.map((proj, index) => (
         <Project key={index} index={index} {...proj} />
       ))}
     </div>
