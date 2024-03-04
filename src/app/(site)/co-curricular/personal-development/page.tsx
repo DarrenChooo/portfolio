@@ -12,7 +12,6 @@ export default function Home() {
           src="/images/wip.png"
           alt="Picture of Me"
           layout="responsive"
-          priority
           width={40}
           height={40}
         />
@@ -28,7 +27,7 @@ export default function Home() {
             <MdArrowOutward className="ml-4 h-4 w-4" />
           </Button>
         </Link>
-        <Link href="/projects">
+        <Link href="/projects/technology-project">
           <Button variant="outline">
             My Projects
             <MdArrowOutward className="ml-4 h-4 w-4" />

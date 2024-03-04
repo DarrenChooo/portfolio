@@ -45,7 +45,7 @@ export const Project: FC<ProjProps> = ({
               </Button>
             ) : null}
             {repoUrl ? (
-              <Button variant={demoUrl ? "ghost" : "default"} asChild>
+              <Button variant={demoUrl ? "ghost" : "default"}  asChild>
                 <Link href={repoUrl}>
                   View Repository
                   <TbBrandGithubFilled className="ml-4 h-4 w-4" />
@@ -58,12 +58,13 @@ export const Project: FC<ProjProps> = ({
       <div className="basis-5/12">
         <Image
           src={imageUrl}
-          alt="Picture of Me"
-          layout="responsive"
-          priority
-          quality={100}
-          width={500}
-          height={500}
+          alt="Project"
+          width={400}
+          height={400}
+          style={{
+            width: "100%",
+            height: "auto",
+          }}
           className="rounded-md w-[450px] shadow-md h-[450px]"
         />
       </div>

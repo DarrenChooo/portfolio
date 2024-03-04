@@ -3,16 +3,16 @@ import Link from "next/link";
 import Image from "next/image";
 import React, { FC } from "react";
 import { MdArrowOutward } from "react-icons/md";
-import { TbBrandGithubFilled } from "react-icons/tb";
 import { cn } from "@/lib/utils";
+import ImageWrapper from "./imageWrapper";
 
 export type ProjProps = {
   index: number;
   title: string;
   desc: string;
   demoUrl?: string;
-  repoUrl?: string;
-  imageUrl: string;
+  portrait?: boolean;
+  imageUrl: any;
 };
 
 export const Project: FC<ProjProps> = ({
@@ -20,7 +20,7 @@ export const Project: FC<ProjProps> = ({
   title,
   desc,
   demoUrl,
-  repoUrl,
+  portrait,
   imageUrl,
 }) => {
   const isEven = index % 2 === 0;
@@ -44,28 +44,11 @@ export const Project: FC<ProjProps> = ({
                 </Link>
               </Button>
             ) : null}
-            {repoUrl ? (
-              <Button variant={demoUrl ? "ghost" : "default"} asChild>
-                <Link href={repoUrl}>
-                  View Repository
-                  <TbBrandGithubFilled className="ml-4 h-4 w-4" />
-                </Link>
-              </Button>
-            ) : null}
           </div>
         </div>
       </div>
       <div className="basis-5/12">
-        <Image
-          src={imageUrl}
-          alt="Picture of Me"
-          layout="responsive"
-          priority
-          quality={100}
-          width={500}
-          height={500}
-          className="rounded-md w-[450px] shadow-md h-[450px]"
-        />
+        <ImageWrapper imageUrl={imageUrl} portrait={portrait} />
       </div>
     </div>
   );
