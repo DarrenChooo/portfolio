@@ -2,13 +2,12 @@ import React from "react";
 import {
   achievementsData,
   educationData,
-  achievementProps,
 } from "./academicData";
 
 const Academic: React.FC = () => {
   return (
     <>
-      <p className="text-4xl font-title pt-16 pb-7">Education</p>
+      <p className="text-4xl font-title pt-16 pb-7 font-semibold">Education</p>
       {educationData.map((education) => (
         <div>
           <hr className=" w-auto h-0.5 mt-3 bg-lightblue border-0 rounded"></hr>
@@ -22,7 +21,7 @@ const Academic: React.FC = () => {
           </div>
         </div>
       ))}
-      <p className="text-4xl font-title pt-16 pb-7">Achievements</p>
+      <p className="text-4xl font-title pt-16 pb-7 font-semibold">Achievements</p>
       {achievementsData.map((education) => (
         <div>
           <hr className=" w-auto h-0.5 mt-3 bg-lightblue border-0 rounded"></hr>

@@ -61,7 +61,7 @@ export default function Home() {
             <p className="text-2xl absolute -ml-10 -mt-8 -rotate-12 text-lightblue font-title">
               About Me
             </p>
-            <p className="text-6xl font-title pe-3">Introduction</p>
+            <p className="text-7xl font-title pe-3 ">Introduction</p>
             <div className="flex">
               <hr className="w-7 h-1 mt-3 bg-lightblue border-0 rounded"></hr>
               <p className="text-lg px-4 text-wrap basis-10/12">

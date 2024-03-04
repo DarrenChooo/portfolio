@@ -14,7 +14,9 @@ const Skills: React.FC = () => {
   return (
     <>
       <div className="py-8">
-        <p className="text-4xl font-title mb-4">Technical Skills</p>
+        <p className="text-4xl font-title mb-4 font-semibold">
+          Technical Skills
+        </p>
         {technicalSkillsData.map((section: SkillProps) => (
           <div key={section.section} className="flex flex-col py-5">
             <p className="text-2xl mb-4 text-lightblue font-semibold">
@@ -45,7 +47,7 @@ const Skills: React.FC = () => {
         ))}
       </div>
       <div className="py-8">
-        <p className="text-4xl font-title mb-4">Design Skills</p>
+        <p className="text-4xl font-title mb-4 font-semibold">Design Skills</p>
         {designSkillsData.map((section: SkillProps) => (
           <div key={section.section} className="flex flex-col py-5">
             <p className="text-2xl mb-4 text-lightblue font-semibold">
