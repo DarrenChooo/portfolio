@@ -21,7 +21,7 @@ const ImageWrapper = ({
         <Carousel>
           <CarouselContent>
             {imageUrl.map((url, index) => (
-              <CarouselItem>
+              <CarouselItem key={index}>
                 <div key={index}>
                   <Image
                     src={url}
@@ -29,10 +29,10 @@ const ImageWrapper = ({
                     width={500}
                     height={500}
                     style={{
-                      width: "100%",
+                      width: portrait ? "60%" : "100%",
                       height: "auto",
                     }}
-                    className="rounded-md shadow-lg "
+                    className="rounded-md shadow-lg mx-auto"
                   />
                 </div>
               </CarouselItem>
@@ -49,7 +49,7 @@ const ImageWrapper = ({
             width={500}
             height={500}
             style={{
-              width: portrait ? "55%" : "100%",
+              width: portrait ? "60%" : "100%",
               height: "auto",
             }}
             className="rounded-md shadow-lg"
