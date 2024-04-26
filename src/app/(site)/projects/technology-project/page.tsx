@@ -1,5 +1,11 @@
+"use client";
+
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { Project, ProjProps } from "../../../../components/project";
+import { RepoCard, RepoCardProps } from "../../../../components/repoCard";
+import { Octokit } from "octokit";
+require("dotenv").config(); // Load environment variables from .env
 
 const projArr: Omit<ProjProps, "index">[] = [
   {
@@ -24,9 +30,35 @@ const projArr: Omit<ProjProps, "index">[] = [
   },
 ];
 
+const octokit = new Octokit({
+  auth: process.env.GITHUB_TOKEN,
+});
+
 export default function Home() {
+  const [repositories, setRepositories] = useState<RepoCardProps[]>([]);
+
+  async function fetchRepositories(username: string) {
+    try {
+      const response = await octokit.request("GET /users/{username}/repos", {
+        username,
+        headers: {
+          "X-GitHub-Api-Version": "2022-11-28",
+        },
+      });
+
+      const repos: RepoCardProps[] = response.data;
+      setRepositories(repos);
+    } catch (error) {
+      console.error("Error fetching repositories:", error);
+    }
+  }
+
+  useEffect(() => {
+    fetchRepositories("DarrenChooo");
+  }, []);
+
   return (
-    <div className="px-16 py-8">
+    <div className="px-16 py-8 space-y-32">
       <div className="flex items-center justify-between">
         <div className="flex flex-col basis-3/5 space-y-6">
           <p className="text-2xl absolute -ml-10 -mt-3 -rotate-12 text-lightblue font-title">
@@ -61,6 +93,15 @@ export default function Home() {
       {projArr.map((proj, index) => (
         <Project key={index} index={index} {...proj} />
       ))}
+
+      <div>
+        <h1 className="text-3xl font-semibold pb-12">My repositories</h1>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {repositories.map((repo) => (
+            <RepoCard key={repo.id} {...repo} />
+          ))}
+        </div>
+      </div>
     </div>
   );
 }

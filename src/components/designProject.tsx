@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import Image from "next/image";
+import { Octokit } from "octokit";
 import React, { FC } from "react";
 import { MdArrowOutward } from "react-icons/md";
 import { cn } from "@/lib/utils";
