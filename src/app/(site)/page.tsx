@@ -43,7 +43,7 @@ export default function Home() {
         </div>
         <div className="basis-5/12">
           <Image
-            src="/images/me2.png"
+            src="/images/me.png"
             alt="Picture of Me"
             width={400}
             height={400}
