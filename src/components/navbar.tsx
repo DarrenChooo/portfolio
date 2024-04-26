@@ -20,8 +20,8 @@ import {
 
 const ccaObj: { title: string; href: string }[] = [
   {
-    title: "School Activities",
-    href: "/co-curricular/school-activities",
+    title: "Clubs & Societies",
+    href: "/co-curricular/club-societies",
   },
   {
     title: "Personal Development",
