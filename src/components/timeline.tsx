@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import Image from "next/image";
+import useEmblaCarousel from 'embla-carousel-react'
 
 import {
   Card,
