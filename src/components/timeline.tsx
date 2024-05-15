@@ -1,6 +1,5 @@
 import React, { FC } from "react";
 import Image from "next/image";
-import useEmblaCarousel from 'embla-carousel-react'
 
 import {
   Card,
@@ -37,8 +36,7 @@ export const Timeline: FC<TimelineProps> = ({
   const isEven = index % 2 === 0;
   return (
     <div>
-      <div className="border-2 absolute border-lightblue2 h-full"></div>
-
+      <div className="border-2 absolute border-lightblue2 h-full" style={{left: "50%"}}></div>
       <Card className="w-[500px]">
         <CardHeader>
           <Carousel>
@@ -53,7 +51,7 @@ export const Timeline: FC<TimelineProps> = ({
                       height={500}
                       style={{
                         width: "100%",
-                        height: "auto",
+                        height: "300px",
                       }}
                       className="rounded-md shadow-lg mx-auto"
                     />
@@ -61,8 +59,6 @@ export const Timeline: FC<TimelineProps> = ({
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
           </Carousel>
           <CardTitle>{title}</CardTitle>
           <CardDescription>{position}</CardDescription>

@@ -5,12 +5,11 @@ import Link from "next/link";
 import { MdArrowOutward } from "react-icons/md";
 import { Timeline, TimelineProps } from "../../../../components/timeline";
 
-
 const timelineArr: Omit<TimelineProps, "index">[] = [
   {
     title: "GovTech Intern Experience",
     position: "Organising Commitee",
-    date:"Apr 2023 - Oct 2023",
+    date: "Apr 2023 - Oct 2023",
     desc: "I have collaborated with GovTech's Young Talent Team on creating events for GovTech interns, using my creativity to come up engaging Electronic Direct Mail designs. I have also liaise with catering services to ensure seamless event logistics during our events.",
     imageUrl: [
       "/images/cca/govtech/1.jpeg",
@@ -19,17 +18,17 @@ const timelineArr: Omit<TimelineProps, "index">[] = [
       "/images/cca/govtech/4.jpeg",
     ],
   },
-  
 ];
 
 export default function Home() {
-
   return (
     <div className="flex items-center flex-wrap justify-center p-20">
-      <div>
-        <p className="text-2xl absolute -ml-10 -mt-5 -rotate-12 text-lightblue font-title">
-          CCAs
-        </p>
+      <div className="flex basis-full justify-center">
+        <div>
+          <p className="text-2xl absolute -ml-10 -mt-5 -rotate-12 text-lightblue font-title">
+            CCAs
+          </p>
+        </div>
         <p className="text-7xl font-title pe-3">Clubs & Societies</p>
       </div>
 
