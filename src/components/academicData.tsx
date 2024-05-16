@@ -10,7 +10,7 @@ export const educationData: achievementProps[] = [
     year: "2021 - Present",
     title: "Singapore Polytechnic",
     desc: "Diploma in Information Technology, Specialised in User Interface and User Experience",
-    extra: "\n\nCumulative Grade Point Average: 3.85",
+    extra: "\n\nCumulative Grade Point Average: 3.89",
   },
   {
     year: "2020 - 2021",

@@ -43,7 +43,7 @@ export const Timeline: FC<TimelineProps> = ({
 
   const isEven = index % 2 === 0;
   return (
-    <div className="flex basis-full mt-20">
+    <div className="flex basis-full mt-6">
       <div
         className="border-2 absolute border-lightblue2 h-full"
         style={{ left: "50%" }}
@@ -51,6 +51,7 @@ export const Timeline: FC<TimelineProps> = ({
       <div
         className={cn("w-full flex", isEven ? "justify-end" : "justify-start")}
       >
+        <div className="z-20 absolute  left-1/2 -translate-x-[calc(50%-2px)] w-6 h-6 border-4 border-lightblue bg-lightblue rounded-full"></div>
         <Card className="w-[475px]">
           <CardHeader>
             <CardTitle>{title}</CardTitle>
@@ -67,7 +68,7 @@ export const Timeline: FC<TimelineProps> = ({
                         height={500}
                         style={{
                           width: "100%",
-                          height: "265px",
+                          height: "260px",
                         }}
                         className="rounded-md shadow-lg mx-auto"
                       />

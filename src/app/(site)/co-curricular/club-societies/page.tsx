@@ -19,7 +19,7 @@ const timelineArr: Omit<TimelineProps, "index">[] = [
     ],
   },
   {
-    title: "Community Service and Culutral Club (CSCC)",
+    title: "Community Service and Cultural Club (CSCC)",
     position: "Head of Subcommittee",
     date: "Apr 2022 - Apr 2023",
     desc: "At CSCC, we have conducted many meaningful activities and community projects, both internal and external. As the head of the subcommittee, I lead a subcommittee of 20 students that planned both internal bonding events and external community service events.",
@@ -43,7 +43,7 @@ const timelineArr: Omit<TimelineProps, "index">[] = [
     ],
   },
   {
-    title: "Community Service and Culutral Club (CSCC)",
+    title: "Community Service and Cultural Club (CSCC)",
     position: "Organising Commitee",
     date: "Apr 2021 - Apr 2022",
     desc: "As a member in the club, I participated in bonding events oragnised by the organising committee to broaden my connections across Singapore Polytechnic. Furthermore, I learnt how to plan bonding events with the guidance of my subcommittee head",
@@ -56,7 +56,7 @@ const timelineArr: Omit<TimelineProps, "index">[] = [
 
 export default function Home() {
   return (
-    <div className="flex items-center flex-wrap justify-center p-20">
+    <div className="flex items-center flex-wrap justify-center p-16">
       <div className="flex basis-full justify-center">
         <div>
           <p className="text-2xl absolute -ml-10 -mt-5 -rotate-12 text-lightblue font-title">
