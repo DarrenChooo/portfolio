@@ -24,6 +24,7 @@ const config = {
       colors: {
         lightblue: "#4d7cf4",
         lightblue2: "#2f64eb",
+        lightorange: "#f1b21c",
         beige: "#fce2d2",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

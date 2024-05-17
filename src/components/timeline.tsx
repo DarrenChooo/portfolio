@@ -26,6 +26,7 @@ export type TimelineProps = {
   position: string;
   desc: string;
   date: string;
+  endYr?: string;
   imageUrl: string | string[];
 };
 
@@ -35,6 +36,7 @@ export const Timeline: FC<TimelineProps> = ({
   position,
   desc,
   date,
+  endYr,
   imageUrl,
 }) => {
   const plugin = React.useRef(
@@ -42,8 +44,9 @@ export const Timeline: FC<TimelineProps> = ({
   );
 
   const isEven = index % 2 === 0;
+
   return (
-    <div className="flex basis-full mt-6">
+    <div className="flex basis-full relative pb-8">
       <div
         className="border-2 absolute border-lightblue2 h-full"
         style={{ left: "50%" }}
@@ -51,8 +54,8 @@ export const Timeline: FC<TimelineProps> = ({
       <div
         className={cn("w-full flex", isEven ? "justify-end" : "justify-start")}
       >
-        <div className="z-20 absolute  left-1/2 -translate-x-[calc(50%-2px)] w-6 h-6 border-4 border-lightblue bg-lightblue rounded-full"></div>
-        <Card className="w-[475px]">
+        <div className="z-20 absolute left-1/2 -translate-x-[calc(50%-2px)] w-6 h-6 border-4 border-lightblue bg-lightblue rounded-full"></div>
+        <Card>
           <CardHeader>
             <CardTitle>{title}</CardTitle>
 
@@ -68,7 +71,7 @@ export const Timeline: FC<TimelineProps> = ({
                         height={500}
                         style={{
                           width: "100%",
-                          height: "260px",
+                          height: "250px",
                         }}
                         className="rounded-md shadow-lg mx-auto"
                       />
@@ -78,12 +81,28 @@ export const Timeline: FC<TimelineProps> = ({
               </CarouselContent>
             </Carousel>
             <div className="flex justify-between">
-              <CardDescription>{position}</CardDescription>
+              <CardDescription >{position}</CardDescription>
               <CardDescription>{date}</CardDescription>
             </div>
           </CardHeader>
           <CardContent>{desc}</CardContent>
         </Card>
+
+        <div
+          className={cn(
+            "absolute top-1/2 transform -translate-y-1/2 -ml-6",
+            isEven ? "left-[calc(50%-50px)]" : "right-[calc(50%-50px)]"
+          )}
+        >
+          <div
+            className={cn(
+              "text-orange-400	 transform text-2xl  font-semibold",
+              isEven ? "-rotate-90" : "rotate-90"
+            )}
+          >
+            {endYr}
+          </div>
+        </div>
       </div>
     </div>
   );
