@@ -55,7 +55,7 @@ export const Timeline: FC<TimelineProps> = ({
         className={cn("w-full flex", isEven ? "justify-end" : "justify-start")}
       >
         <div className="z-20 absolute left-1/2 -translate-x-[calc(50%-2px)] w-6 h-6 border-4 border-lightblue bg-lightblue rounded-full"></div>
-        <Card>
+        <Card className="w-[505px]">
           <CardHeader>
             <CardTitle>{title}</CardTitle>
 

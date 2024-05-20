@@ -64,7 +64,7 @@ export default function Home() {
             <p className="text-7xl font-title pe-3 ">Introduction</p>
             <div className="flex">
               <hr className="w-7 h-1 mt-3 bg-lightblue border-0 rounded"></hr>
-              <p className="text-lg px-4 text-wrap basis-10/12 text-balance">
+              <p className="text-lg px-4 text-wrap basis-10/12">
                 I'm Darren, a Year 3 Singapore Polytechnic student, pursuing a
                 Diploma in Information Technology, interning at the Government
                 Technology Agency I truly believe
