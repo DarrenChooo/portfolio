@@ -7,9 +7,9 @@ import { Timeline, TimelineProps } from "../../../../components/timeline";
 
 const timelineArr: Omit<TimelineProps, "index">[] = [
   {
-    title: "GovTech Intern Experience",
-    position: "Organising Committee",
-    date: "Apr 2023 - Oct 2023",
+    title: "TikTok x Halogen Mentoring",
+    position: "Mentee",
+    date: "Jan 2024 - Jun 2024",
     endYr: "2023",
     desc: "I have collaborated with GovTech's Young Talent Team on creating events for GovTech interns, using my creativity to come up engaging Electronic Direct Mail designs. I have also liaise with catering services to ensure seamless event logistics during our events.",
     imageUrl: [
@@ -63,14 +63,15 @@ export default function Home() {
           <p className="text-2xl absolute -ml-10 -mt-3 -rotate-12 text-lightblue font-title">
             CCAs
           </p>
-          <p className="text-7xl font-title pe-3">Clubs & Societies</p>
+          <p className="text-7xl font-title pe-3">Personal Development</p>
           <div className="flex">
             <hr className="w-7 h-1 mt-3 bg-lightblue border-0 rounded"></hr>
             <p className="text-lg px-4 text-wrap basis-3/4">
-              Discover the vibrant array of club activities I've
-              passionately engaged in. Each club showcasing a unique journey
-              of collaboration, leadership, and community impact, reflecting my
-              commitment to making a difference and fostering connections
+              Explore the plethora of activities I've engaged in for my personal
+              development. Through each experiences, I have nutured and grow to
+              who I am today. I look forward to a series of experiences and
+              opportunities in my jourey of learning, striving towards
+              excellence.
             </p>
           </div>
         </div>
