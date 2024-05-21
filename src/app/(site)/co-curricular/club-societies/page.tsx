@@ -50,7 +50,7 @@ const timelineArr: Omit<TimelineProps, "index">[] = [
     position: "Subcommitee Member",
     date: "Apr 2021 - Apr 2022",
     endYr: "",
-    desc: "As a member in the club, I participated in bonding events oragnised by the organising committee to broaden my connections across Singapore Polytechnic. Furthermore, I learnt how to plan bonding events with the guidance of my subcommittee head",
+    desc: "As a member, I participated in bonding events oragnised by the organising committee to broaden my connections across Singapore Polytechnic. Furthermore, I learnt how to plan bonding events with the guidance of my subcommittee head",
     imageUrl: ["/images/cca/cscc/1.jpeg", "/images/cca/cscc/2.jpeg"],
   },
 ];
