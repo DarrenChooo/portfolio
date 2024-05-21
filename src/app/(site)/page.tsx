@@ -34,7 +34,7 @@ export default function Home() {
               <FaTelegramPlane className="ml-4 h-4 w-4" />
             </Button>
             <Button variant="ghost" asChild>
-              <Link href="/projects">
+              <Link href="/projects/technology-project">
                 My Projects
                 <MdArrowOutward className="ml-4 h-4 w-4" />
               </Link>
