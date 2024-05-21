@@ -28,8 +28,8 @@ const ccaObj: { title: string; href: string }[] = [
     href: "/co-curricular/personal-development",
   },
   {
-    title: "Volunteer",
-    href: "/co-curricular/volunteer",
+    title: "Volunteer Initiatives",
+    href: "/co-curricular/volunteer-initiatives",
   },
 ];
 

@@ -85,7 +85,7 @@ export default function Home() {
             alt="Picture of Gif"
             width={260}
             height={260}
-            className="-ml-5"
+            className="-ml-3"
           />
         </div>
       </div>
