@@ -65,10 +65,10 @@ export default function Home() {
             <div className="flex">
               <hr className="w-7 h-1 mt-3 bg-lightblue border-0 rounded"></hr>
               <p className="text-lg px-4 text-wrap basis-10/12">
-                I'm Darren, a Year 3 Singapore Polytechnic student, pursuing a
-                Diploma in Information Technology, interning at the Government
-                Technology Agency I truly believe
-                in the power of technology to improve lives.
+                I'm Darren, a Singapore Polytechnic graduate, with a Diploma
+                with Merit in Information Technology, interning at the
+                Government Technology Agency. I truly believe in the power of
+                technology to improve lives and address social challenges.
               </p>
             </div>
           </div>
