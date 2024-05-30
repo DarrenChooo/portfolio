@@ -3,8 +3,8 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
-import { FaTelegramPlane } from "react-icons/fa";
-import { MdArrowOutward } from "react-icons/md";
+import { FaSpinner, FaTelegramPlane } from "react-icons/fa";
+import { MdArrowOutward, MdCheck, MdWarning } from "react-icons/md";
 import Skills from "../../components/skill";
 import Academic from "../../components/academic";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -20,31 +20,58 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { MessageCircleIcon } from "lucide-react";
+import { Textarea } from "@/components/ui/textarea";
+import { sendEmail } from "./send-email.action";
+import { toast } from "sonner";
 
 const formSchema = z.object({
-  name: z.string().min(2, {
-    message: "",
-  }),
-  email: z.string().min(2, {
-    message: "",
-  }),
-  enquiry: z.string().min(2, {
-    message: "",
-  }),
+  name: z
+    .string({
+      required_error: "Name is required",
+    })
+    .min(2, {
+      message: "Name is required",
+    }),
+  email: z
+    .string({
+      required_error: "Email is required",
+    })
+    .email({
+      message: "Invalid email address",
+    }),
+  message: z
+    .string({
+      required_error: "Message is required",
+    })
+    .min(2, {
+      message: "Message is required",
+    }),
 });
 
 export default function Home() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
-    defaultValues: {
-      name: "",
-      email: "",
-      enquiry: "",
-    },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    const { error, success } = await sendEmail(
+      values.name,
+      values.email,
+      values.message
+    );
+
+    if (!success || error) {
+      toast.error(error, {
+        icon: <MdWarning />,
+      });
+    }
+
+    toast.success("Successfully sent email", { icon: <MdCheck /> });
+    form.reset({
+      email: "",
+      message: "",
+      name: "",
+    });
   }
 
   return (
@@ -137,6 +164,7 @@ export default function Home() {
           <form
             onSubmit={form.handleSubmit(onSubmit)}
             className="w-1/3 flex flex-col space-y-6"
+            noValidate
           >
             <FormField
               control={form.control}
@@ -147,7 +175,8 @@ export default function Home() {
                   <FormControl>
                     <Input
                       {...field}
-                      type="name"
+                      autoComplete="name"
+                      placeholder="e.g. John Doe"
                     />
                   </FormControl>
                   <FormMessage />
@@ -164,6 +193,8 @@ export default function Home() {
                     <Input
                       {...field}
                       type="email"
+                      autoComplete="email"
+                      placeholder="e.g. johndoe@gmail.com"
                     />
                   </FormControl>
                   <FormMessage />
@@ -172,21 +203,27 @@ export default function Home() {
             />
             <FormField
               control={form.control}
-              name="enquiry"
+              name="message"
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Message</FormLabel>
                   <FormControl>
-                    <Input
+                    <Textarea
                       {...field}
-                      type="name"
+                      placeholder="e.g. I want to work with you!"
                     />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
             />
-            <Button type="submit">Submit</Button>
+            <Button type="submit" disabled={form.formState.isSubmitting}>
+              {form.formState.isSubmitting ? (
+                <FaSpinner className="animate-spin" />
+              ) : (
+                "Submit"
+              )}
+            </Button>
           </form>
         </Form>
       </div>
