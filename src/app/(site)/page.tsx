@@ -96,9 +96,11 @@ export default function Home() {
             </p>
           </div>
           <div className="flex space-x-4">
-            <Button>
-              Contact Me
-              <FaTelegramPlane className="ml-4 h-4 w-4" />
+            <Button asChild>
+              <Link href={"#contact-me"}>
+                Contact Me
+                <FaTelegramPlane className="ml-4 h-4 w-4" />
+              </Link>
             </Button>
             <Button variant="ghost" asChild>
               <Link href="/projects/technology-project">
@@ -147,7 +149,7 @@ export default function Home() {
           <Skills></Skills>
         </div>
       </div>
-      <div className="flex flex-col items-center space-y-6">
+      <div id="contact-me" className="flex flex-col items-center space-y-6">
         <p className="text-7xl font-title ">Contact Me</p>
         <p className="text-xl text-wrap text-center">
           Feel free to contact me any time. I will get back to you as soon as I
