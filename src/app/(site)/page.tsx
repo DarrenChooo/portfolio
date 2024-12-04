@@ -75,27 +75,33 @@ export default function Home() {
   }
 
   return (
-    <div className="px-16 py-8">
-      <div className="flex items-center">
-        <div className="flex flex-col basis-7/12 space-y-6">
+    <div className=" px-16 py-8">
+      <div className="flex flex-col-reverse lg:flex-row items-center">
+        <div className="flex flex-col basis-full lg:basis-7/12 space-y-6">
           <div className="flex flex-col space-y-4">
-            <p className="text-2xl absolute -mt-5 -ml-6 -rotate-12 text-lightblue font-title">
+            <p className="text-xl sm:text-2xl absolute -mt-5 -ml-6 -rotate-12 text-lightblue font-title hidden sm:block">
               Hello!
             </p>
-            <div className="flex">
-              <p className="text-7xl font-title pe-3">I'm</p>
-              <p className="text-7xl font-title text-lightblue">Darren Choo,</p>
+            <div className="flex flex-wrap">
+              <p className="text-4xl sm:text-5xl lg:text-7xl font-title pe-3">
+                I'm
+              </p>
+              <p className="text-4xl sm:text-5xl lg:text-7xl font-title text-lightblue">
+                Darren Choo,
+              </p>
             </div>
-            <p className="text-6xl font-title">Fullstack Web Developer</p>
+            <p className="text-xl sm:text-2xl lg:text-6xl font-title">
+              Fullstack Web Developer
+            </p>
           </div>
-          <div className="flex">
+          <div className="flex flex-wrap">
             <hr className="w-7 h-1 mt-3 bg-lightblue border-0 rounded"></hr>
-            <p className="text-lg px-4 text-wrap basis-4/5">
+            <p className="text-base sm:text-lg px-4 text-wrap basis-full lg:basis-4/5">
               Creating seamless experiences, developing software for both client
               and server sides with modern technology.
             </p>
           </div>
-          <div className="flex space-x-4">
+          <div className="flex flex-wrap gap-4">
             <Button asChild>
               <Link href={"#contact-me"}>
                 Contact Me
@@ -110,62 +116,63 @@ export default function Home() {
             </Button>
           </div>
         </div>
-        <div className="basis-5/12">
+        <div className=" lg:basis-5/12">
           <Image
             src="/images/me.png"
             alt="Picture of Me"
             width={400}
             height={400}
-            style={{
-              width: "100%",
-              height: "auto",
-            }}
-            className="rounded-full "
+            className="rounded-full"
           />
         </div>
       </div>
-      <div className="flex py-24">
-        <div className="basis-7/12">
-          <div className="space-y-6 pb-8">
-            <p className="text-2xl absolute -ml-10 -mt-8 -rotate-12 text-lightblue font-title">
-              About Me
+      <div className="flex flex-col lg:flex-row py-24 space-y-8 lg:space-y-0">
+        <div className="basis-full lg:basis-7/12 space-y-6">
+          <p className="text-xl sm:text-2xl absolute -ml-10 -mt-8 -rotate-12 text-lightblue font-title hidden sm:block">
+            About Me
+          </p>
+          <p className="text-4xl sm:text-5xl lg:text-7xl font-title pe-3">
+            Introduction
+          </p>
+          <div className="flex flex-wrap">
+            <hr className="w-7 h-1 mt-3 bg-lightblue border-0 rounded"></hr>
+            <p className="text-base sm:text-lg px-4 text-wrap basis-full lg:basis-10/12">
+              I'm Darren, a Singapore Polytechnic graduate, with a Diploma with
+              Merit in Information Technology, interning at the Government
+              Technology Agency. I truly believe in the power of technology to
+              improve lives and address social challenges.
             </p>
-            <p className="text-7xl font-title pe-3">Introduction</p>
-            <div className="flex">
-              <hr className="w-7 h-1 mt-3 bg-lightblue border-0 rounded"></hr>
-              <p className="text-lg px-4 text-wrap basis-10/12">
-                I'm Darren, a Singapore Polytechnic graduate, with a Diploma
-                with Merit in Information Technology, interning at the
-                Government Technology Agency. I truly believe in the power of
-                technology to improve lives and address social challenges.
-              </p>
-            </div>
           </div>
-          <div className="w-3/4">
-            <Academic></Academic>
+          <div className="w-full lg:w-3/4">
+            <Academic />
           </div>
         </div>
-        <div className="basis-5/12">
-          <Skills></Skills>
+        <div className="basis-full lg:basis-5/12">
+          <Skills />
         </div>
       </div>
-      <div id="contact-me" className="flex flex-col items-center space-y-6">
-        <p className="text-7xl font-title ">Contact Me</p>
-        <p className="text-xl text-wrap text-center">
+      <div
+        id="contact-me"
+        className="flex flex-col items-center space-y-6 px-4"
+      >
+        <p className="text-4xl sm:text-5xl lg:text-7xl font-title">
+          Contact Me
+        </p>
+        <p className="text-base sm:text-xl text-wrap text-center">
           Feel free to contact me any time. I will get back to you as soon as I
           can!
         </p>
         <Image
           src="/images/contact.png"
           alt="Picture of Contact Me"
-          width={230}
-          height={230}
-          className="-ml-3"
+          width={200}
+          height={200}
+          className="rounded"
         />
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}
-            className="w-1/3 flex flex-col space-y-6"
+            className="w-full sm:w-3/4 lg:w-1/3 flex flex-col space-y-6"
             noValidate
           >
             <FormField
