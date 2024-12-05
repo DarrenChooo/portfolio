@@ -6,6 +6,7 @@ import NextLink from "next/link";
 import { FaLinkedinIn, FaTelegramPlane } from "react-icons/fa";
 import { TbBrandGithubFilled } from "react-icons/tb";
 import { IoIosMail } from "react-icons/io";
+import { motion } from "framer-motion";
 
 import { cn } from "@/lib/utils";
 import {
@@ -17,6 +18,8 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
+import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
+import { Button } from "./ui/button";
 
 const ccaObj: { title: string; href: string }[] = [
   {
@@ -76,96 +79,199 @@ export default function NavigationMenuDemo() {
   const isCoCurricularActive = pathname.startsWith("/co-curricular");
   const isProjectActive = pathname.startsWith("/projects");
 
+  const [isCoCurricularOpen, setIsCoCurricularOpen] = React.useState(false);
+
+  const handleCoCurricularToggle = () => {
+    setIsCoCurricularOpen(!isCoCurricularOpen);
+  };
+
   return (
-    <div className="flex justify-between p-4">
-      <div className="self-start text-lg font-medium py-2">
-        <p className="font-bold">Darren Choo</p>
-      </div>
+    <nav className="flex justify-between">
+      <div className="container mx-auto flex flex-col items-center gap-4 p-3 lg:flex-row lg:justify-between lg:items-center lg:gap-0">
+        <div className="flex w-full justify-between items-center lg:w-auto lg:justify-start">
+          <div className="text-lg font-medium">
+            <p className="font-bold">Darren Choo</p>
+          </div>
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button variant="ghost" className="lg:hidden">
+                <span className="sr-only">Open Menu</span>
+                <svg
+                  className="h-6 w-6"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M4 6h16M4 12h16m-7 6h7"
+                  />
+                </svg>
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="left" className="p-4 flex flex-col h-full">
+              <div className="flex-grow space-y-6">
+                <NavigationMenu>
+                  <NavigationMenuList>
+                    <NavigationMenuItem asChild>
+                      <Link href="/">About Me</Link>
+                    </NavigationMenuItem>
+                  </NavigationMenuList>
+                </NavigationMenu>
+                <NavigationMenu>
+                  <NavigationMenuList>
+                    <NavigationMenuItem>
+                      <NavigationMenuTrigger
+                        className={cn(
+                          "text-lg font-semibold",
+                          isCoCurricularActive && "text-lightblue"
+                        )}
+                        onClick={handleCoCurricularToggle}
+                      >
+                        Co-Curricular Activities
+                      </NavigationMenuTrigger>
+                      <NavigationMenuContent>
+                        <ul className="flex flex-wrap flex-col gap-3 p-3 text-nowrap">
+                          {ccaObj.map((cca) => (
+                            <ListItem
+                              key={cca.title}
+                              title={cca.title}
+                              href={cca.href}
+                            />
+                          ))}
+                        </ul>
+                      </NavigationMenuContent>
+                    </NavigationMenuItem>
+                  </NavigationMenuList>
+                </NavigationMenu>
+                <NavigationMenu>
+                  <NavigationMenuList>
+                    <NavigationMenuItem>
+                      <motion.div
+                        animate={{
+                          marginTop: isCoCurricularOpen ? 164 : 0, // Dynamically animate margin-top
+                        }}
+                        transition={{
+                          duration: 0.3, // Duration of the animation
+                          ease: "easeInOut", // Easing function
+                        }}
+                      >
+                        <NavigationMenuTrigger
+                          className={cn(
+                            "text-lg font-semibold",
+                            isProjectActive && "text-lightblue"
+                          )}
+                        >
+                          Projects
+                        </NavigationMenuTrigger>
+                        <NavigationMenuContent>
+                          <ul className="flex flex-wrap flex-col gap-3 p-3 text-nowrap">
+                            {projectObj.map((proj) => (
+                              <ListItem
+                                key={proj.title}
+                                title={proj.title}
+                                href={proj.href}
+                              />
+                            ))}
+                          </ul>
+                        </NavigationMenuContent>
+                      </motion.div>
+                    </NavigationMenuItem>
+                  </NavigationMenuList>
+                </NavigationMenu>
+              </div>
+              <div className="mt-auto flex justify-between px-8">
+                <a href="mailto:darrenchoojh88@email.com">
+                  <IoIosMail className="h-6 w-6 hover:text-lightblue" />
+                </a>
+                <a href="https://www.linkedin.com/in/darren-choo-921654239/">
+                  <FaLinkedinIn className="h-6 w-6 hover:text-lightblue" />
+                </a>
+                <a href="https://github.com/DarrenChooo">
+                  <TbBrandGithubFilled className="h-6 w-6 hover:text-lightblue" />
+                </a>
+              </div>
+            </SheetContent>
+          </Sheet>
+        </div>
 
-      <div className="flex space-x-4">
-        <NavigationMenu>
-          <NavigationMenuList>
-            <NavigationMenuItem asChild>
-              <Link href="/">About Me</Link>
-            </NavigationMenuItem>
-          </NavigationMenuList>
-        </NavigationMenu>
-        <NavigationMenu>
-          <NavigationMenuList>
-            <NavigationMenuItem>
-              <NavigationMenuTrigger
-                className={cn(
-                  "text-lg font-semibold",
-                  isCoCurricularActive && "text-lightblue"
-                )}
-              >
-                Co-Curricular Activities
-              </NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="flex flex-wrap flex-col gap-3 p-3 text-nowrap">
-                  {ccaObj.map((ccaObj) => (
-                    <ListItem
-                      key={ccaObj.title}
-                      title={ccaObj.title}
-                      href={ccaObj.href}
-                    ></ListItem>
-                  ))}
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-          </NavigationMenuList>
-        </NavigationMenu>
-        <NavigationMenu>
-          <NavigationMenuList>
-            <NavigationMenuItem>
-              <NavigationMenuTrigger
-                className={cn(
-                  "text-lg font-semibold",
-                  isProjectActive && "text-lightblue"
-                )}
-              >
-                Projects
-              </NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="flex flex-wrap flex-col gap-3 p-3 text-nowrap">
-                  {projectObj.map((projectObj) => (
-                    <ListItem
-                      key={projectObj.title}
-                      title={projectObj.title}
-                      href={projectObj.href}
-                    ></ListItem>
-                  ))}
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-          </NavigationMenuList>
-        </NavigationMenu>
-      </div>
+        <div className="hidden lg:flex space-x-4">
+          <NavigationMenu>
+            <NavigationMenuList>
+              <NavigationMenuItem asChild>
+                <Link href="/">About Me</Link>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
+          <NavigationMenu>
+            <NavigationMenuList>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger
+                  className={cn(
+                    "text-lg font-semibold",
+                    isCoCurricularActive && "text-lightblue"
+                  )}
+                >
+                  Co-Curricular Activities
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="flex flex-wrap flex-col gap-3 p-3 text-nowrap">
+                    {ccaObj.map((cca) => (
+                      <ListItem
+                        key={cca.title}
+                        title={cca.title}
+                        href={cca.href}
+                      />
+                    ))}
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
+          <NavigationMenu>
+            <NavigationMenuList>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger
+                  className={cn(
+                    "text-lg font-semibold",
+                    isProjectActive && "text-lightblue"
+                  )}
+                >
+                  Projects
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="flex flex-wrap flex-col gap-3 p-3 text-nowrap">
+                    {projectObj.map((proj) => (
+                      <ListItem
+                        key={proj.title}
+                        title={proj.title}
+                        href={proj.href}
+                      />
+                    ))}
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
+        </div>
 
-      <div className="py-2 flex space-x-6">
-        <a
-          href="mailto:darrenchoojh88@email.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <IoIosMail className="h-6 w-6 hover:text-lightblue" />
-        </a>
-        <a
-          href="https://www.linkedin.com/in/darren-choo-921654239/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FaLinkedinIn className="h-6 w-6 hover:text-lightblue" />
-        </a>
-        <a
-          href="https://github.com/DarrenChooo"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <TbBrandGithubFilled className="h-6 w-6 hover:text-lightblue" />
-        </a>
+        <div className="hidden lg:flex space-x-6">
+          <a href="mailto:darrenchoojh88@email.com">
+            <IoIosMail className="h-6 w-6 hover:text-lightblue" />
+          </a>
+          <a href="https://www.linkedin.com/in/darren-choo-921654239/">
+            <FaLinkedinIn className="h-6 w-6 hover:text-lightblue" />
+          </a>
+          <a href="https://github.com/DarrenChooo">
+            <TbBrandGithubFilled className="h-6 w-6 hover:text-lightblue" />
+          </a>
+        </div>
       </div>
-    </div>
+    </nav>
   );
 }
 

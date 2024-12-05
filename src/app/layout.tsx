@@ -17,10 +17,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" >
-      <body className={cn(inter.className, "overflow-x-hidden scroll-smooth px-16")}>
+    <html lang="en" className="overflow-x-hidden scroll-smooth">
+      <body className={cn(inter.className, "xl:px-16 lg:px-12")}>
         <Navbar />
-        <main className="container flex items-center">{children}</main>
+        <main className="container mx-auto sm:px-6 lg:px-8 flex items-center">{children}</main>
         <Toaster richColors />
       </body>
     </html>

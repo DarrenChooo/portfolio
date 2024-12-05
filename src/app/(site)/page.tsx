@@ -75,7 +75,7 @@ export default function Home() {
   }
 
   return (
-    <div className=" px-16 py-8">
+    <div className="xl:px-16 py-8">
       <div className="flex flex-col-reverse lg:flex-row items-center">
         <div className="flex flex-col basis-full lg:basis-7/12 space-y-6">
           <div className="flex flex-col space-y-4">
