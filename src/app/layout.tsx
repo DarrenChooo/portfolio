@@ -18,9 +18,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="overflow-x-hidden scroll-smooth">
-      <body className={cn(inter.className, "xl:px-16 lg:px-12")}>
+      <body className={cn(inter.className, "px-4 sm:px-6 lg:px-12 xl:px-16")}>
         <Navbar />
-        <main className="container mx-auto sm:px-6 lg:px-8 flex items-center">{children}</main>
+        <main className="max-w-screen-xl mx-auto lg:px-12 lg:py-12 flex items-center">{children}</main>
         <Toaster richColors />
       </body>
     </html>

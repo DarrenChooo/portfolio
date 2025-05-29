@@ -75,10 +75,10 @@ export default function Home() {
   }
 
   return (
-    <div className="xl:px-16 py-8">
+    <div className="">
       <div className="flex flex-col-reverse lg:flex-row items-center">
-        <div className="flex flex-col basis-full lg:basis-7/12 space-y-6">
-          <div className="flex flex-col space-y-4">
+        <div className="flex flex-col basis-full lg:basis-7/12 space-y-2 lg:space-y-6 py-4">
+          <div className="flex flex-col lg:space-y-4 space-y-0">
             <p className="text-xl sm:text-2xl absolute -mt-5 -ml-6 -rotate-12 text-lightblue font-title hidden sm:block">
               Hello!
             </p>
@@ -116,17 +116,18 @@ export default function Home() {
             </Button>
           </div>
         </div>
-        <div className=" lg:basis-5/12">
+        <div className="lg:basis-5/12">
           <Image
             src="/images/me.png"
             alt="Picture of Me"
             width={400}
             height={400}
-            className="rounded-full"
+            className="rounded-full w-72 lg:w-11/12"
+            sizes="100vw"
           />
         </div>
       </div>
-      <div className="flex flex-col lg:flex-row py-24 space-y-8 lg:space-y-0">
+      <div className="flex flex-col lg:flex-row lg:py-24 space-y-8 lg:space-y-0">
         <div className="basis-full lg:basis-7/12 space-y-6">
           <p className="text-xl sm:text-2xl absolute -ml-10 -mt-8 -rotate-12 text-lightblue font-title hidden sm:block">
             About Me
