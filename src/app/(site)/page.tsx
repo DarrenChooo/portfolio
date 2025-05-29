@@ -75,9 +75,9 @@ export default function Home() {
   }
 
   return (
-    <div className="">
-      <div className="flex flex-col-reverse lg:flex-row items-center">
-        <div className="flex flex-col basis-full lg:basis-7/12 space-y-2 lg:space-y-6 py-4">
+    <div className="w-full lg:space-y-0 space-y-4">
+      <div className="flex flex-col lg:flex-row items-center">
+        <div className="flex flex-col basis-full lg:basis-7/12 space-y-4 lg:space-y-6 py-4">
           <div className="flex flex-col lg:space-y-4 space-y-0">
             <p className="text-xl sm:text-2xl absolute -mt-5 -ml-6 -rotate-12 text-lightblue font-title hidden sm:block">
               Hello!
@@ -95,8 +95,8 @@ export default function Home() {
             </p>
           </div>
           <div className="flex flex-wrap">
-            <hr className="w-7 h-1 mt-3 bg-lightblue border-0 rounded"></hr>
-            <p className="text-base sm:text-lg px-4 text-wrap basis-full lg:basis-4/5">
+            <hr className="w-7 h-1 mt-3 bg-lightblue border-0 rounded hidden lg:block"></hr>
+            <p className="text-base sm:text-lg lg:px-4 text-wrap basis-full lg:basis-4/5">
               Creating seamless experiences, developing software for both client
               and server sides with modern technology.
             </p>
@@ -128,16 +128,16 @@ export default function Home() {
         </div>
       </div>
       <div className="flex flex-col lg:flex-row lg:py-24 space-y-8 lg:space-y-0">
-        <div className="basis-full lg:basis-7/12 space-y-6">
+        <div className="basis-full lg:basis-7/12 lg:space-y-6 space-y-3">
           <p className="text-xl sm:text-2xl absolute -ml-10 -mt-8 -rotate-12 text-lightblue font-title hidden sm:block">
             About Me
           </p>
-          <p className="text-4xl sm:text-5xl lg:text-7xl font-title pe-3">
+          <p className="text-4xl sm:text-5xl lg:text-7xl font-title pe-3 lg:font-normal font-semibold">
             Introduction
           </p>
           <div className="flex flex-wrap">
-            <hr className="w-7 h-1 mt-3 bg-lightblue border-0 rounded"></hr>
-            <p className="text-base sm:text-lg px-4 text-wrap basis-full lg:basis-10/12">
+            <hr className="w-7 h-1 mt-3 bg-lightblue border-0 rounded hidden lg:block"></hr>
+            <p className="text-base sm:text-lg lg:px-4 text-wrap basis-full lg:basis-10/12">
               I'm Darren, a Singapore Polytechnic graduate, with a Diploma with
               Merit in Information Technology, interning at the Government
               Technology Agency. I truly believe in the power of technology to
