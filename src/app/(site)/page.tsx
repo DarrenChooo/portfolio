@@ -79,20 +79,20 @@ export default function Home() {
       <div className="flex flex-col lg:flex-row items-center">
         <div className="flex flex-col basis-full lg:basis-7/12 space-y-4 lg:space-y-6 py-4">
           <div className="flex flex-col lg:space-y-4 space-y-0">
-            <div className="flex flex-row items-center space-x-4">
+            <div className="flex flex-row items-center lg:space-x-4 space-x-2">
               <div>
                 <p className="text-xl sm:text-2xl absolute -mt-5 -ml-6 -rotate-12 text-lightblue font-title hidden sm:block">
                   Hello!
                 </p>
                 <div className="flex flex-wrap">
-                  <p className="text-[34px] lg:text-7xl font-title lg:me-3 me-1">
+                  <p className="text-[28px] lg:text-7xl font-title lg:me-3 me-1">
                     I'm
                   </p>
-                  <p className="text-[34px] lg:text-7xl font-title text-lightblue">
+                  <p className="text-[28px] lg:text-7xl font-title text-lightblue">
                     Darren Choo,
                   </p>
                 </div>
-                <p className="text-xl sm:text-xl lg:text-6xl font-title">
+                <p className="text-lg lg:text-6xl font-title">
                   Fullstack Web Developer
                 </p>
               </div>
