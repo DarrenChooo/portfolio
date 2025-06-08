@@ -57,16 +57,16 @@ const timelineArr: Omit<TimelineProps, "index">[] = [
 
 export default function Home() {
   return (
-    <div className="flex items-center flex-wrap justify-center p-16">
+    <div className="flex items-center flex-wrap justify-center md:p-16">
       <div className="flex items-center justify-between mb-32">
-        <div className="flex flex-col basis-3/5 space-y-6">
-          <p className="text-2xl absolute -ml-10 -mt-3 -rotate-12 text-lightblue font-title">
+        <div className="flex flex-col basis-3/5 lg:space-y-6 space-y-2">
+          <p className="text-2xl absolute -ml-10 -mt-3 -rotate-12 text-lightblue font-title hidden md:block">
             CCAs
           </p>
-          <p className="text-7xl font-title pe-3">Clubs & Societies</p>
+          <p className="text-[28px] lg:text-7xl  font-title pe-3">Clubs & Societies</p>
           <div className="flex">
-            <hr className="w-7 h-1 mt-3 bg-lightblue border-0 rounded"></hr>
-            <p className="text-lg px-4 text-wrap basis-3/4">
+            <hr className="w-7 h-1 mt-3 bg-lightblue border-0 rounded hidden md:block"></hr>
+            <p className="md:text-lg text-base md:px-4 text-wrap basis-3/4">
               Discover the vibrant array of club activities I've passionately
               engaged in. Each club showcasing a unique journey of
               collaboration, leadership, and community impact, reflecting my
@@ -85,7 +85,7 @@ export default function Home() {
             alt="Picture of Gif"
             width={260}
             height={260}
-            className="-ml-3"
+            className="-ml-3 rounded-full w-28 lg:w-7/12 "
           />
         </div>
       </div>

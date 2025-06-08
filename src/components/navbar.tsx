@@ -90,7 +90,7 @@ export default function NavigationMenuDemo() {
       <div className="container mx-auto flex flex-col items-center gap-4 p-3 lg:flex-row lg:justify-between lg:items-center lg:gap-0">
         <div className="flex w-full justify-between items-center lg:w-auto lg:justify-start ">
           <div className="text-lg font-medium">
-            <p className="font-bold  ml-4 lg:ml-0">Darren Choo</p>
+            <p className="font-bold lg:ml-0">Darren Choo</p>
           </div>
           <Sheet>
             <SheetTrigger asChild>

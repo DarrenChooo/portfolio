@@ -81,7 +81,7 @@ export default function Home() {
           <div className="flex flex-col lg:space-y-4 space-y-0">
             <div className="flex flex-row items-center lg:space-x-4 space-x-2">
               <div>
-                <p className="text-xl sm:text-2xl absolute -mt-5 -ml-6 -rotate-12 text-lightblue font-title hidden sm:block">
+                <p className="text-xl sm:text-2xl absolute -mt-5 -ml-6 -rotate-12 text-lightblue font-title hidden md:block">
                   Hello!
                 </p>
                 <div className="flex flex-wrap">
@@ -144,15 +144,15 @@ export default function Home() {
       </div>
       <div className="flex flex-col lg:flex-row lg:py-24 space-y-8 lg:space-y-0">
         <div className="basis-full lg:basis-7/12 lg:space-y-6 space-y-3">
-          <p className="text-xl sm:text-2xl absolute -ml-10 -mt-8 -rotate-12 text-lightblue font-title hidden sm:block">
+          <p className="text-xl sm:text-2xl absolute -ml-10 -mt-8 -rotate-12 text-lightblue font-title hidden md:block">
             About Me
           </p>
-          <p className="text-4xl sm:text-5xl lg:text-7xl font-title pe-3 lg:font-normal font-semibold">
+          <p className="md:text-4xl text-3xl lg:text-7xl font-title pe-3 lg:font-normal font-semibold">
             Introduction
           </p>
           <div className="flex flex-wrap">
             <hr className="w-7 h-1 mt-3 bg-lightblue border-0 rounded hidden lg:block"></hr>
-            <p className="text-base sm:text-lg lg:px-4 text-wrap basis-full lg:basis-10/12">
+            <p className="text-base sm:text-lg lg:px-4 text-wrap text-justify basis-full lg:basis-10/12">
               I'm Darren, a Singapore Polytechnic graduate, with a Diploma with
               Merit in Information Technology, interning at the Government
               Technology Agency. I truly believe in the power of technology to
@@ -171,7 +171,7 @@ export default function Home() {
         id="contact-me"
         className="flex flex-col items-center space-y-6 px-4"
       >
-        <p className="text-4xl sm:text-5xl lg:text-7xl font-title">
+        <p className="md:text-4xl text-3xl lg:text-7xl font-title">
           Contact Me
         </p>
         <p className="text-base sm:text-xl text-wrap text-center">

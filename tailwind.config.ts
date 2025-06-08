@@ -18,6 +18,9 @@ const config = {
       },
     },
     extend: {
+      fontSize: {
+        base: "13px", 
+      },
       fontFamily: {
         title: ["Barlow Semi Condensed"],
       },
