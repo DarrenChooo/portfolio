@@ -11,10 +11,10 @@ const Academic: React.FC = () => {
           <div className="py-4 space-y-4 lg:pb-8 pb-6">
             <div className="flex justify-between text-lg font-semibold ">
               <p className="text-[15px] md:text-lg"> {education.year}</p>
-              <p className="text-[15px] md:text-lg">{education.title}</p>
+              <p className="text-[15px] md:text-lg ">{education.title}</p>
             </div>
-            <p className="text-base md:text-lg">{education.desc}</p>
-            <p className="text-base md:text-lg">{education.extra}</p>
+            <p className="text-base md:text-lg text-justify">{education.desc}</p>
+            <p className="text-base md:text-lg text-justify">{education.extra}</p>
           </div>
         </div>
       ))}
@@ -29,7 +29,7 @@ const Academic: React.FC = () => {
               <p className="text-[15px] md:text-lg">{achievement.year}</p>
               <p className="text-[15px] md:text-lg">{achievement.title}</p>
             </div>
-            <p className="max-w-md text-base md:text-lg">{achievement.desc}</p>
+            <p className="text-base md:text-lg text-justify">{achievement.desc}</p>
           </div>
         </div>
       ))}

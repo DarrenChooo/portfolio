@@ -27,6 +27,11 @@ export const educationData: achievementProps[] = [
 
 export const achievementsData: achievementProps[] = [
   {
+    year: "2024",
+    title: "Diploma with Merit",
+    desc: "Awarded to students who have achieved a minimum cumulative GPA score of 3.0, are within the top 10% of each graduating course cohort, have good conduct, be of good character and uphold SP CORE values",
+  },
+  {
     year: "2023",
     title: "Edusave Merit Bursary Award",
     desc: "Students within the top 25% of their school’s level and course in academic performance have demonstrated good conduct.",

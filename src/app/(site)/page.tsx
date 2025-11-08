@@ -144,20 +144,23 @@ export default function Home() {
       </div>
       <div className="flex flex-col lg:flex-row lg:py-24 space-y-8 lg:space-y-0">
         <div className="basis-full lg:basis-7/12 lg:space-y-6 space-y-3">
-          <p className="text-xl sm:text-2xl absolute -ml-10 -mt-8 -rotate-12 text-lightblue font-title hidden md:block">
-            About Me
-          </p>
-          <p className="md:text-4xl text-3xl lg:text-7xl font-title pe-3 lg:font-normal font-semibold">
-            Introduction
-          </p>
-          <div className="flex flex-wrap">
-            <hr className="w-7 h-1 mt-3 bg-lightblue border-0 rounded hidden lg:block"></hr>
-            <p className="text-base sm:text-lg lg:px-4 text-wrap text-justify basis-full lg:basis-10/12">
-              I'm Darren, a Singapore Polytechnic graduate, with a Diploma with
-              Merit in Information Technology, interning at the Government
-              Technology Agency. I truly believe in the power of technology to
-              improve lives and address social challenges.
+          <div className="w-full lg:w-[88%]">
+            <p className="text-xl sm:text-2xl absolute -ml-10 -mt-8 -rotate-12 text-lightblue font-title hidden md:block">
+              About Me
             </p>
+            <p className="md:text-4xl text-3xl lg:text-7xl font-title pe-3 lg:font-normal font-semibold">
+              Introduction
+            </p>
+            <div className="flex flex-wrap pt-3">
+              <hr className="w-7 h-1 mt-3 bg-lightblue border-0 rounded hidden lg:block"></hr>
+              <p className="text-base sm:text-lg lg:px-4 text-wrap text-justify basis-full lg:basis-10/12">
+                I'm Darren, a Singapore Polytechnic graduate, with a Diploma in
+                Information Technology. Currently I'm in National Service while
+                awaiting my further studies in Computer Science at the National
+                University of Singapore. I truly believe in the power of
+                technology to improve lives and address social challenges.
+              </p>
+            </div>
           </div>
           <div className="w-full lg:w-3/4">
             <Academic />
