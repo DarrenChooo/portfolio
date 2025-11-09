@@ -75,11 +75,11 @@ export default function Home() {
   }
 
   return (
-    <div className="w-full lg:space-y-0 space-y-4">
+    <div className="w-full lg:space-y-0 space-y-4 px-2 pb-2">
       <div className="flex flex-col lg:flex-row items-center">
         <div className="flex flex-col basis-full lg:basis-7/12 space-y-4 lg:space-y-6 py-4">
           <div className="flex flex-col lg:space-y-4 space-y-0">
-            <div className="flex flex-row items-center lg:space-x-4 space-x-2">
+            <div className="flex flex-row items-center lg:space-x-4 space-x-2 justify-between">
               <div>
                 <p className="text-xl sm:text-2xl absolute -mt-5 -ml-6 -rotate-12 text-lightblue font-title hidden md:block">
                   Hello!
@@ -108,7 +108,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="flex flex-wrap">
+          <div className="flex flex-wrap text-justify text-wrap">
             <hr className="w-7 h-1 mt-3 bg-lightblue border-0 rounded hidden lg:block"></hr>
             <p className="text-base sm:text-lg lg:px-4 text-wrap basis-full lg:basis-4/5">
               Creating seamless experiences, developing software for both client

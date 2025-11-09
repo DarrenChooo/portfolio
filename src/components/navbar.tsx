@@ -6,7 +6,7 @@ import NextLink from "next/link";
 import { FaLinkedinIn, FaTelegramPlane } from "react-icons/fa";
 import { TbBrandGithubFilled } from "react-icons/tb";
 import { IoIosMail } from "react-icons/io";
-import { motion } from "framer-motion";
+import { easeInOut, easeOut, motion } from "framer-motion";
 
 import { cn } from "@/lib/utils";
 import {
@@ -75,24 +75,34 @@ const Link: React.FC<LinkProps> = ({ href, children }) => {
 
 export default function NavigationMenuDemo() {
   const pathname = usePathname();
+  const [isSheetOpen, setIsSheetOpen] = React.useState(false);
 
-  const isCoCurricularActive = pathname.startsWith("/co-curricular");
-  const isProjectActive = pathname.startsWith("/projects");
+  React.useEffect(() => {
+    setIsSheetOpen(false);
+  }, [pathname]);
+
+  React.useEffect(() => {
+    if (!isSheetOpen) {
+      setIsCoCurricularOpen(false); // automatically reset when mobile menu closes
+    }
+  }, [isSheetOpen]);
 
   const [isCoCurricularOpen, setIsCoCurricularOpen] = React.useState(false);
+  const [projectPadding, setProjectPadding] = React.useState(0);
 
   const handleCoCurricularToggle = () => {
     setIsCoCurricularOpen(!isCoCurricularOpen);
+    setProjectPadding(!isCoCurricularOpen ? 164 : 0);
   };
 
   return (
     <nav className="flex justify-between">
-      <div className="container mx-auto flex flex-col items-center gap-4 p-3 lg:flex-row lg:justify-between lg:items-center lg:gap-0">
+      <div className="container mx-auto flex flex-col items-center gap-4 p-3 lg:flex-row lg:justify-between lg:items-center ">
         <div className="flex w-full justify-between items-center lg:w-auto lg:justify-start ">
           <div className="text-lg font-medium">
             <p className="font-bold lg:ml-0">Darren Choo</p>
           </div>
-          <Sheet>
+          <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" className="lg:hidden">
                 <span className="sr-only">Open Menu</span>
@@ -127,8 +137,7 @@ export default function NavigationMenuDemo() {
                     <NavigationMenuItem>
                       <NavigationMenuTrigger
                         className={cn(
-                          "text-lg font-semibold",
-                          isCoCurricularActive && "text-lightblue"
+                          "text-lg font-semibold transition-colors",
                         )}
                         onClick={handleCoCurricularToggle}
                       >
@@ -152,22 +161,25 @@ export default function NavigationMenuDemo() {
                   <NavigationMenuList>
                     <NavigationMenuItem>
                       <motion.div
-                        animate={{
-                          marginTop: isCoCurricularOpen ? 164 : 0, // Dynamically animate margin-top
-                        }}
                         transition={{
-                          duration: 0.3, // Duration of the animation
-                          ease: "easeInOut", // Easing function
+                          duration: 0.1,
+                          ease: easeInOut,
                         }}
                       >
-                        <NavigationMenuTrigger
-                          className={cn(
-                            "text-lg font-semibold",
-                            isProjectActive && "text-lightblue"
-                          )}
+                        <motion.div
+                          animate={{ marginTop: isCoCurricularOpen ? 164 : 0 }}
+                          transition={{ duration: 0.15, ease: "easeInOut" }}
                         >
-                          Projects
-                        </NavigationMenuTrigger>
+                          <NavigationMenuTrigger
+                            className={cn(
+                              "text-lg font-semibold transition-colors",
+                            )}
+                            onClick={() => setIsCoCurricularOpen(false)}
+                          >
+                            Projects
+                          </NavigationMenuTrigger>
+                        </motion.div>
+
                         <NavigationMenuContent>
                           <ul className="flex flex-wrap flex-col gap-3 p-3 text-nowrap">
                             {projectObj.map((proj) => (
@@ -210,12 +222,7 @@ export default function NavigationMenuDemo() {
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
-                <NavigationMenuTrigger
-                  className={cn(
-                    "text-lg font-semibold",
-                    isCoCurricularActive && "text-lightblue"
-                  )}
-                >
+                <NavigationMenuTrigger className={cn("text-lg font-semibold")}>
                   Co-Curricular Activities
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
@@ -235,12 +242,7 @@ export default function NavigationMenuDemo() {
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
-                <NavigationMenuTrigger
-                  className={cn(
-                    "text-lg font-semibold",
-                    isProjectActive && "text-lightblue"
-                  )}
-                >
+                <NavigationMenuTrigger className={cn("text-lg font-semibold")}>
                   Projects
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
@@ -282,7 +284,7 @@ const ListItem = React.forwardRef<
   const pathname = usePathname();
 
   return (
-    <li>
+    <li className="z-10">
       <NavigationMenuLink asChild>
         <a
           ref={ref}
@@ -294,8 +296,7 @@ const ListItem = React.forwardRef<
         >
           <div
             className={cn(
-              "text-lg font-medium leading-none hover:text-lightblue2",
-              pathname === props.href && "text-lightblue"
+              "text-lg font-medium leading-none hover:text-lightblue2"
             )}
           >
             {title}
