@@ -40,7 +40,7 @@ export const Timeline: FC<TimelineProps> = ({
   imageUrl,
 }) => {
   const plugin = React.useRef(
-    Autoplay({ delay: 2000, stopOnInteraction: true })
+    Autoplay({ delay: 2000, stopOnInteraction: true }),
   );
 
   const isEven = index % 2 === 0;
@@ -55,7 +55,7 @@ export const Timeline: FC<TimelineProps> = ({
         className={cn("w-full flex", isEven ? "justify-end" : "justify-start")}
       >
         <div className="z-20 absolute left-1/2 -translate-x-[calc(50%-2px)] w-6 h-6 border-4 border-lightblue bg-lightblue rounded-full"></div>
-        <Card className="w-[505px]">
+        <Card className="w-[470px]">
           <CardHeader>
             <CardTitle>{title}</CardTitle>
 
@@ -67,11 +67,11 @@ export const Timeline: FC<TimelineProps> = ({
                       <Image
                         src={url}
                         alt={`Image ${index + 1}`}
-                        width={500}
-                        height={500}
+                        width={700}
+                        height={700}
                         style={{
                           width: "100%",
-                          height: "250px",
+                          height: "225px",
                         }}
                         className="rounded-md shadow-lg mx-auto"
                       />
@@ -81,7 +81,7 @@ export const Timeline: FC<TimelineProps> = ({
               </CarouselContent>
             </Carousel>
             <div className="flex justify-between">
-              <CardDescription >{position}</CardDescription>
+              <CardDescription>{position}</CardDescription>
               <CardDescription>{date}</CardDescription>
             </div>
           </CardHeader>
@@ -91,17 +91,10 @@ export const Timeline: FC<TimelineProps> = ({
         <div
           className={cn(
             "absolute top-1/2 transform -translate-y-1/2 -ml-6",
-            isEven ? "left-[calc(50%-50px)]" : "right-[calc(50%-50px)]"
+            isEven ? "left-[calc(50%-50px)]" : "right-[calc(50%-50px)]",
           )}
         >
-          <div
-            className={cn(
-              "text-orange-400	 transform text-2xl  font-semibold",
-              isEven ? "-rotate-90" : "rotate-90"
-            )}
-          >
-            {endYr}
-          </div>
+          <div className="text-orange-400 text-2xl font-semibold">{endYr}</div>
         </div>
       </div>
     </div>

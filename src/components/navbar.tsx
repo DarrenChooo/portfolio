@@ -97,14 +97,14 @@ export default function NavigationMenuDemo() {
 
   return (
     <nav className="flex justify-between">
-      <div className="container mx-auto flex flex-col items-center gap-4 p-3 lg:flex-row lg:justify-between lg:items-center ">
+      <div className="container mx-auto flex flex-col items-center gap-4 lg:p-3 p-[5px] lg:flex-row lg:justify-between  ">
         <div className="flex w-full justify-between items-center lg:w-auto lg:justify-start ">
           <div className="text-lg font-medium">
             <p className="font-bold lg:ml-0">Darren Choo</p>
           </div>
           <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" className="lg:hidden">
+              <Button variant="ghost" className="lg:hidden px-2">
                 <span className="sr-only">Open Menu</span>
                 <svg
                   className="h-6 w-6"

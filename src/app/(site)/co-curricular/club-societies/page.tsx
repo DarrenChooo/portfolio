@@ -11,7 +11,7 @@ const timelineArr: Omit<TimelineProps, "index">[] = [
     position: "Organising Committee",
     date: "Apr 2023 - Oct 2023",
     endYr: "2023",
-    desc: "I have collaborated with GovTech's Young Talent Team on creating events for GovTech interns, using my creativity to come up engaging Electronic Direct Mail designs. I have also liaise with catering services to ensure seamless event logistics during our events.",
+    desc: "Worked with GovTech Young Talent Team to organise intern events and design EDMs. Also coordinated with catering vendors to ensure smooth event logistics.",
     imageUrl: [
       "/images/cca/govtech/1.jpeg",
       "/images/cca/govtech/2.jpeg",
@@ -24,7 +24,7 @@ const timelineArr: Omit<TimelineProps, "index">[] = [
     position: "Head of Subcommittee",
     date: "Apr 2022 - Apr 2023",
     endYr: "",
-    desc: "At CSCC, we have conducted many meaningful activities and community projects, both internal and external. As the head of the subcommittee, I lead a subcommittee of 20 students that planned both internal bonding events and external community service events.",
+    desc: "Led a 20-member subcommittee to plan internal bonding and external community service events at CSCC.",
     imageUrl: [
       "/images/cca/csccHead/1.jpeg",
       "/images/cca/csccHead/2.jpeg",
@@ -38,7 +38,7 @@ const timelineArr: Omit<TimelineProps, "index">[] = [
     position: "Organising Commitee",
     date: "Dec 2021 - Dec 2022",
     endYr: "2022",
-    desc: "In Bloom I have grown and nurtured my leadership skills by pushing myself out of my comfort zone so that I can empathise and understand the community better. I have collaborated and communicated with volunteering organisations and help publicise their acts of service to students in Singapore Polytechnic.",
+    desc: "Developed leadership by working with volunteer groups and promoting service initiatives to Singapore Polytechnic students.",
     imageUrl: [
       "/images/cca/bloom/1.jpeg",
       "/images/cca/bloom/2.jpeg",
@@ -50,23 +50,49 @@ const timelineArr: Omit<TimelineProps, "index">[] = [
     position: "Subcommitee Member",
     date: "Apr 2021 - Apr 2022",
     endYr: "",
-    desc: "As a member, I participated in bonding events oragnised by the organising committee to broaden my connections across Singapore Polytechnic. Furthermore, I learnt how to plan bonding events with the guidance of my subcommittee head",
+    desc: "Participated in bonding events and learned event planning skills under guidance of subcommittee leaders.",
     imageUrl: ["/images/cca/cscc/1.jpeg", "/images/cca/cscc/2.jpeg"],
   },
 ];
 
 export default function Home() {
   return (
-    <div className="flex items-center flex-wrap justify-center md:p-16">
-      <div className="flex items-center justify-between mb-32">
-        <div className="flex flex-col basis-3/5 lg:space-y-6 space-y-2">
-          <p className="text-2xl absolute -ml-10 -mt-3 -rotate-12 text-lightblue font-title hidden md:block">
-            CCAs
-          </p>
-          <p className="text-[28px] lg:text-7xl  font-title pe-3">Clubs & Societies</p>
-          <div className="flex">
-            <hr className="w-7 h-1 mt-3 bg-lightblue border-0 rounded hidden md:block"></hr>
-            <p className="md:text-lg text-base md:px-4 text-wrap basis-3/4">
+    <div className="w-full px-2 pb-2">
+      <div className="flex flex-col lg:flex-row items-center lg:pb-28">
+        <div className="flex flex-col basis-full lg:basis-7/12 space-y-4 lg:space-y-6 py-4">
+          <div className="flex flex-col lg:space-y-4 space-y-0">
+            <div className="flex flex-row items-center lg:space-x-4 justify-between">
+              <div>
+                <p className="text-xl sm:text-2xl absolute -mt-5 -ml-6 -rotate-12 text-lightblue font-title hidden md:block">
+                  CCAs
+                </p>
+                <div className="flex flex-wrap">
+                  <p className="text-[28px] text-wrap lg:text-7xl font-title lg:me-3 me-1">
+                    Clubs & Societies
+                  </p>
+                </div>
+              </div>
+              <div className="md:hidden">
+                <div className="relative flex justify-center items-center mt-4">
+                  <div
+                    className="rounded-full aspect-square absolute w-24 h-24 border-lightblue border-2 border-dashed"
+                    aria-hidden
+                  />
+
+                  <Image
+                    src="/images/cca/gifs/club.gif"
+                    alt="Picture of Gif"
+                    width={140}
+                    height={140}
+                    className="rounded-full w-20 h-20 object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-wrap text-justify text-wrap">
+            <hr className="w-7 h-1 mt-3 bg-lightblue border-0 rounded hidden lg:block"></hr>
+            <p className="text-base sm:text-lg lg:px-4 text-wrap basis-full lg:basis-4/5">
               Discover the vibrant array of club activities I've passionately
               engaged in. Each club showcasing a unique journey of
               collaboration, leadership, and community impact, reflecting my
@@ -74,21 +100,60 @@ export default function Home() {
             </p>
           </div>
         </div>
-        <div className="basis-5/12 relative flex justify-center items-center mt-8">
-          <div
-            className="rounded-full h-[135%] aspect-square absolute border-lightblue border-4 border-spacing-10 border-dashed -z-10"
-            role="presentation"
-            aria-hidden
-          />
-          <Image
-            src="/images/cca/gifs/club.gif"
-            alt="Picture of Gif"
-            width={260}
-            height={260}
-            className="-ml-3 rounded-full w-28 lg:w-7/12 "
-          />
+        <div className="lg:basis-5/12 pl-12 hidden md:block">
+          <div className="relative flex justify-center items-center mt-8">
+            <div
+              className="rounded-full h-[130%] aspect-square absolute border-lightblue border-4 border-spacing-12 border-dashed"
+              aria-hidden
+            />
+            <Image
+              src="/images/cca/gifs/club.gif"
+              alt="Picture of Gif"
+              width={240}
+              height={240}
+              className="-ml-3 rounded-full w-28 lg:w-7/12"
+            />
+          </div>
         </div>
       </div>
+
+      {/* <div className="flex flex-col lg:pb-28">
+        <div className="flex flex-row items-center lg:space-x-4 space-x-2 justify-between">
+          <div className="flex flex-col basis-full lg:basis-7/12 space-y-4 lg:space-y-6 py-4">
+            <p className="text-xl sm:text-2xl absolute -mt-5 -ml-6 -rotate-12 text-lightblue font-title hidden md:block">
+              CCAs
+            </p>
+            <div className="flex flex-wrap">
+              <p className="text-[28px] lg:text-7xl font-title lg:me-3 me-1">
+                Clubs & Societies
+              </p>
+            </div>
+            <div className="flex flex-wrap text-justify text-wrap">
+              <hr className="w-7 h-1 mt-3 bg-lightblue border-0 rounded hidden lg:block"></hr>
+              <p className="text-base sm:text-lg lg:px-4 text-wrap basis-full lg:basis-4/5">
+                Discover the vibrant array of club activities I've passionately
+                engaged in. Each club showcasing a unique journey of
+                collaboration, leadership, and community impact, reflecting my
+                commitment to making a difference and fostering connections.
+              </p>
+            </div>
+          </div>
+          <div className="basis-5/12 relative flex justify-center items-center mt-8">
+            <div
+              className="rounded-full h-[130%] aspect-square absolute border-lightblue border-4 border-spacing-10 border-dashed -z-10"
+              role="presentation"
+              aria-hidden
+            />
+            <Image
+              src="/images/cca/gifs/club.gif"
+              alt="Picture of Gif"
+              width={260}
+              height={260}
+              className="-ml-3 rounded-full w-28 lg:w-7/12 "
+            />
+          </div>
+        </div>
+      </div> */}
 
       {timelineArr.map((proj, index) => (
         <Timeline key={index} index={index} {...proj} />

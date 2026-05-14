@@ -131,7 +131,7 @@ export default function Home() {
             </Button>
           </div>
         </div>
-        <div className="lg:basis-5/12 hidden md:block">
+        <div className="lg:basis-5/12 pl-12 hidden md:block">
           <Image
             src="/images/me.png"
             alt="Picture of Me"
