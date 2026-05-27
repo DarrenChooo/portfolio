@@ -4,7 +4,7 @@ export const clubsSocietiesTimeline: Omit<TimelineProps, "index">[] = [
     {
         title: "GovTech Intern Experience",
         position: "Organising Committee",
-        date: "Apr 2023 - Oct 2023",
+        date: "Apr - Oct 2023",
         endYr: "2023",
         desc: "Worked with GovTech Young Talent Team to organise intern events and design EDMs. Also coordinated with catering vendors to ensure smooth event logistics.",
         imageUrl: [
@@ -15,7 +15,7 @@ export const clubsSocietiesTimeline: Omit<TimelineProps, "index">[] = [
         ],
     },
     {
-        title: "Community Service and Cultural Club (CSCC)",
+        title: "Community Service and Cultural Club",
         position: "Head of Subcommittee",
         date: "Apr 2022 - Apr 2023",
         endYr: "",
@@ -41,7 +41,7 @@ export const clubsSocietiesTimeline: Omit<TimelineProps, "index">[] = [
         ],
     },
     {
-        title: "Community Service and Cultural Club (CSCC)",
+        title: "Community Service and Cultural Club",
         position: "Subcommitee Member",
         date: "Apr 2021 - Apr 2022",
         endYr: "",

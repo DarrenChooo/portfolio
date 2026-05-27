@@ -17,7 +17,7 @@ image,
 timeline,
 }: Props) {
 return (
-    <div className="w-full px-2 pb-2">
+    <div className="w-full pb-2">
     {/* HERO */}
     <div className="flex flex-col lg:flex-row items-center lg:pb-28">
         {/* LEFT */}

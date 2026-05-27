@@ -4,7 +4,7 @@ export const personalDevelopmentTimeline: Omit<TimelineProps, "index">[] = [
     {
         title: "TikTok x Halogen Mentoring",
         position: "Mentee",
-        date: "Jan 2024 - Jun 2024",
+        date: "Jan - Jun 2024",
         endYr: "2024",
         desc: "During my mentorship, I engaged with like-minded individuals and met my mentor monthly to learn industry insights and life skills.",
         imageUrl: [
@@ -16,7 +16,7 @@ export const personalDevelopmentTimeline: Omit<TimelineProps, "index">[] = [
     {
         title: "NUS-ISS Digital Futurist Challenge",
         position: "Participant",
-        date: "Jul 2022 - Nov 2022",
+        date: "Jul - Nov 2022",
         endYr: "2022",
         desc: "Participated in a hackathon focused on healthcare innovation while developing leadership skills in a multidisciplinary team.",
         imageUrl: [

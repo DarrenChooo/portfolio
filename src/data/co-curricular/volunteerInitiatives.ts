@@ -2,9 +2,9 @@ import { TimelineProps } from "@/components/timeline";
 
 export const volunteerTimeline: Omit<TimelineProps, "index">[] = [
     {
-        title: "Singapore Association of the Visually Handicapped (SAVH)",
+        title: "Singapore Association of the Visually Handicapped",
         position: "Volunteer",
-        date: "Oct 2023 - Dec 2023",
+        date: "Oct - Dec 2023",
         endYr: "2024",
         desc: "Volunteered with the visually handicapped community in Singapore, including accompanying them to medical appointments and engaging in meaningful conversations.",
         imageUrl: [
@@ -13,9 +13,9 @@ export const volunteerTimeline: Omit<TimelineProps, "index">[] = [
         ],
     },
     {
-        title: "Hao Ren Hao Shi (HRHS)",
+        title: "Hao Ren Hao Shi",
         position: "Community Liaison / Volunteer",
-        date: "Jun 2022 - Nov 2022",
+        date: "Jun - Nov 2022",
         endYr: "2022",
         desc: "Designed outreach posters and coordinated volunteers while supporting on-site packing and distribution for beneficiary families.",
         imageUrl: [
