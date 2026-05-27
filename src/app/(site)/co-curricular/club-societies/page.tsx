@@ -59,40 +59,42 @@ export default function Home() {
   return (
     <div className="w-full px-2 pb-2">
       <div className="flex flex-col lg:flex-row items-center lg:pb-28">
-        <div className="flex flex-col basis-full lg:basis-7/12 space-y-4 lg:space-y-6 py-4">
-          <div className="flex flex-col lg:space-y-4 space-y-0">
-            <div className="flex flex-row items-center lg:space-x-4 justify-between">
-              <div>
-                <p className="text-xl sm:text-2xl absolute -mt-5 -ml-6 -rotate-12 text-lightblue font-title hidden md:block">
-                  CCAs
-                </p>
-                <div className="flex flex-wrap">
-                  <p className="text-[28px] text-wrap lg:text-7xl font-title lg:me-3 me-1">
-                    Clubs & Societies
-                  </p>
-                </div>
-              </div>
-              <div className="md:hidden">
-                <div className="relative flex justify-center items-center mt-4">
-                  <div
-                    className="rounded-full aspect-square absolute w-24 h-24 border-lightblue border-2 border-dashed"
-                    aria-hidden
-                  />
-
-                  <Image
-                    src="/images/cca/gifs/club.gif"
-                    alt="Picture of Gif"
-                    width={140}
-                    height={140}
-                    className="rounded-full w-20 h-20 object-cover"
-                  />
-                </div>
-              </div>
+        <div className="flex flex-col basis-full lg:basis-7/12 space-y-2 lg:space-y-6 ">
+          <div className="hidden md:block">
+            <p className="text-xl sm:text-2xl absolute -mt-5 -ml-6 -rotate-12 text-lightblue font-title hidden md:block">
+              CCAs
+            </p>
+            <div className="flex flex-wrap">
+              <p className="text-[28px] text-wrap lg:text-7xl font-title lg:me-3 me-1">
+                Clubs & Societies
+              </p>
             </div>
+          </div>
+          <div className="flex flex-col items-center text-center gap-[10px] lg:hidden">
+            <div className="w-28 h-28 rounded-full border-2 border-dashed border-lightblue flex items-center justify-center bg-blue-50">
+              <Image
+                src="/images/cca/gifs/club.gif"
+                alt="Clubs gif"
+                width={60}
+                height={60}
+                className="w-20 h-20 object-cover"
+              />
+            </div>
+            <span className="text-xs font-medium bg-blue-50 text-lightblue px-3 py-1 rounded-full">
+              CCAs
+            </span>
+            <h1 className="text-4xl font-title">Clubs & Societies</h1>
+            <hr className="w-7 h-0.5 bg-lightblue border-0 rounded" />
+            <p className="text-xs text-gray-500 leading-relaxed max-w-xs">
+              Discover the vibrant array of club activities I've passionately
+              engaged in. Each club showcasing a unique journey of
+              collaboration, leadership, and community impact, reflecting my
+              commitment to making a difference and fostering connections.
+            </p>
           </div>
           <div className="flex flex-wrap text-justify text-wrap">
             <hr className="w-7 h-1 mt-3 bg-lightblue border-0 rounded hidden lg:block"></hr>
-            <p className="text-base sm:text-lg lg:px-4 text-wrap basis-full lg:basis-4/5">
+            <p className="text-base text-lg hidden md:block lg:px-4 text-wrap basis-full lg:basis-[85%]  pt-2 lg:pt-0">
               Discover the vibrant array of club activities I've passionately
               engaged in. Each club showcasing a unique journey of
               collaboration, leadership, and community impact, reflecting my
@@ -111,49 +113,11 @@ export default function Home() {
               alt="Picture of Gif"
               width={240}
               height={240}
-              className="-ml-3 rounded-full w-28 lg:w-7/12"
+              className="-ml-3 w-28 lg:w-7/12"
             />
           </div>
         </div>
       </div>
-
-      {/* <div className="flex flex-col lg:pb-28">
-        <div className="flex flex-row items-center lg:space-x-4 space-x-2 justify-between">
-          <div className="flex flex-col basis-full lg:basis-7/12 space-y-4 lg:space-y-6 py-4">
-            <p className="text-xl sm:text-2xl absolute -mt-5 -ml-6 -rotate-12 text-lightblue font-title hidden md:block">
-              CCAs
-            </p>
-            <div className="flex flex-wrap">
-              <p className="text-[28px] lg:text-7xl font-title lg:me-3 me-1">
-                Clubs & Societies
-              </p>
-            </div>
-            <div className="flex flex-wrap text-justify text-wrap">
-              <hr className="w-7 h-1 mt-3 bg-lightblue border-0 rounded hidden lg:block"></hr>
-              <p className="text-base sm:text-lg lg:px-4 text-wrap basis-full lg:basis-4/5">
-                Discover the vibrant array of club activities I've passionately
-                engaged in. Each club showcasing a unique journey of
-                collaboration, leadership, and community impact, reflecting my
-                commitment to making a difference and fostering connections.
-              </p>
-            </div>
-          </div>
-          <div className="basis-5/12 relative flex justify-center items-center mt-8">
-            <div
-              className="rounded-full h-[130%] aspect-square absolute border-lightblue border-4 border-spacing-10 border-dashed -z-10"
-              role="presentation"
-              aria-hidden
-            />
-            <Image
-              src="/images/cca/gifs/club.gif"
-              alt="Picture of Gif"
-              width={260}
-              height={260}
-              className="-ml-3 rounded-full w-28 lg:w-7/12 "
-            />
-          </div>
-        </div>
-      </div> */}
 
       {timelineArr.map((proj, index) => (
         <Timeline key={index} index={index} {...proj} />

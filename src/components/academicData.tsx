@@ -29,7 +29,7 @@ export const achievementsData: achievementProps[] = [
   {
     year: "2024",
     title: "Diploma with Merit",
-    desc: "Awarded to students who have achieved a minimum cumulative GPA score of 3.0, are within the top 10% of each graduating course cohort, have good conduct, be of good character and uphold SP CORE values",
+    desc: "Awarded to students with a minimum GPA of 3.0, top 10% cohort ranking, and demonstrating good conduct, character, and adherence to SP CORE values.",
   },
   {
     year: "2023",

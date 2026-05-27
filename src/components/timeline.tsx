@@ -85,7 +85,7 @@ export const Timeline: FC<TimelineProps> = ({
               <CardDescription>{date}</CardDescription>
             </div>
           </CardHeader>
-          <CardContent>{desc}</CardContent>
+          <CardContent className="text-justify">{desc}</CardContent>
         </Card>
 
         <div
