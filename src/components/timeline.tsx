@@ -12,12 +12,11 @@ import {
   CardDescription,
   CardContent,
 } from "./ui/card";
+
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselPrevious,
-  CarouselNext,
 } from "./ui/carousel";
 
 export type TimelineProps = {
@@ -40,62 +39,79 @@ export const Timeline: FC<TimelineProps> = ({
   imageUrl,
 }) => {
   const plugin = React.useRef(
-    Autoplay({ delay: 2000, stopOnInteraction: true }),
+    Autoplay({ delay: 2000, stopOnInteraction: true })
   );
 
   const isEven = index % 2 === 0;
 
   return (
     <div className="flex basis-full relative pb-8">
+
+      {/* CENTER LINE */}
       <div
         className="border-2 absolute border-lightblue2 h-full"
         style={{ left: "50%" }}
-      ></div>
+      />
+
       <div
-        className={cn("w-full flex", isEven ? "justify-end" : "justify-start")}
+        className={cn(
+          "w-full flex",
+          isEven ? "justify-end" : "justify-start"
+        )}
       >
-        <div className="z-20 absolute left-1/2 -translate-x-[calc(50%-2px)] w-6 h-6 border-4 border-lightblue bg-lightblue rounded-full"></div>
+
+        {/* DOT (ONLY ONE PER ITEM WITH endYr) */}
+        {endYr && (
+          <div className="z-20 absolute left-1/2 -translate-x-[calc(50%-2px)] w-6 h-6 border-4 border-lightblue bg-lightblue rounded-full" />
+        )}
+
+        {/* CARD */}
         <Card className="w-[470px]">
           <CardHeader>
             <CardTitle>{title}</CardTitle>
 
             <Carousel plugins={[plugin.current]}>
               <CarouselContent>
-                {[imageUrl].flat().map((url, index) => (
-                  <CarouselItem key={index}>
-                    <div key={index}>
-                      <Image
-                        src={url}
-                        alt={`Image ${index + 1}`}
-                        width={700}
-                        height={700}
-                        style={{
-                          width: "100%",
-                          height: "225px",
-                        }}
-                        className="rounded-md shadow-lg mx-auto"
-                      />
-                    </div>
+                {[imageUrl].flat().map((url, i) => (
+                  <CarouselItem key={i}>
+                    <Image
+                      src={url}
+                      alt={`Image ${i + 1}`}
+                      width={700}
+                      height={700}
+                      className="rounded-md shadow-lg mx-auto w-full h-[225px] object-cover"
+                    />
                   </CarouselItem>
                 ))}
               </CarouselContent>
             </Carousel>
+
             <div className="flex justify-between">
               <CardDescription>{position}</CardDescription>
               <CardDescription>{date}</CardDescription>
             </div>
           </CardHeader>
-          <CardContent className="text-justify">{desc}</CardContent>
+
+          <CardContent className="text-justify">
+            {desc}
+          </CardContent>
         </Card>
 
-        <div
-          className={cn(
-            "absolute top-1/2 transform -translate-y-1/2 -ml-6",
-            isEven ? "left-[calc(50%-50px)]" : "right-[calc(50%-50px)]",
-          )}
-        >
-          <div className="text-orange-400 text-2xl font-semibold">{endYr}</div>
-        </div>
+        {/* YEAR LABEL (NO DUPLICATES) */}
+        {endYr && (
+          <div
+            className={cn(
+              "absolute top-1/2 -translate-y-1/2",
+              isEven
+                ? "left-[calc(37%+40px)]"
+                : "right-[calc(37%+40px)]"
+            )}
+          >
+            <div className="text-orange-400 text-2xl font-semibold whitespace-nowrap">
+              {endYr}
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

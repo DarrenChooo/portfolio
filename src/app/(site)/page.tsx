@@ -80,14 +80,14 @@ export default function Home() {
         <div className="flex flex-col basis-full lg:basis-7/12 space-y-2 lg:space-y-6">
           {/* Desktop Layout */}
           <div className="hidden md:block">
-            <p className="text-xl sm:text-2xl absolute -mt-5 -ml-6 -rotate-12 text-lightblue font-title hidden md:block">
+            <p className="text-xl sm:text-2xl absolute -mt-7 -ml-6 -rotate-12 text-lightblue font-title hidden md:block">
               Hello!
             </p>
             <div className="flex flex-wrap">
-              <p className="text-[28px] lg:text-7xl font-title lg:me-3 me-1">
+              <p className="text-[24px] lg:text-7xl font-title lg:me-3 me-1">
                 I'm
               </p>
-              <p className="text-[28px] lg:text-7xl font-title text-lightblue">
+              <p className="text-[24px] lg:text-7xl font-title text-lightblue">
                 Darren Choo,
               </p>
             </div>
