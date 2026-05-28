@@ -21,7 +21,7 @@ const buttonVariants = cva(
         icon: "shadow-sm rounded-full justify-between space-x-2 font-bold text-gray-700 transition hover:scale-110 hover:bg-foreground/5",
       },
       size: {
-        default: "h-12 px-4 py-3",
+        default: "md:h-12 h-8 px-4 py-3",
         sm: "h-9 rounded-md px-3",
         lg: "h-11 rounded-md px-8",
         icon: "h-10 w-10",

@@ -26,18 +26,18 @@ const Skills: React.FC = () => {
               {section.frameworks.map((framework) => (
                 <Button variant="icon" asChild key={framework.name}>
                   <Link href={framework.url}>
-                    <div className="flex items-center space-x-1">
+                    <div className="flex items-center gap-1">
                       <Image
                         src={`/images/icons/${
                           section.path + "/" + framework.icon
                         }.svg`}
                         alt={framework.name}
                         loading="lazy"
-                        width={32}
-                        height={32}
-                        className="rounded-full bg-white p-1"
+                        width={28}
+                        height={28}
+                        className="rounded-full bg-white p-1 md:w-8 md:h-8"
                       />
-                      <p>{framework.name}</p>
+                      <p className="text-xs md:text-sm">{framework.name}</p>
                     </div>
                   </Link>
                 </Button>
@@ -57,18 +57,18 @@ const Skills: React.FC = () => {
               {section.frameworks.map((framework) => (
                 <Button variant="icon" asChild key={framework.name}>
                   <Link href={framework.url}>
-                    <div className="flex items-center space-x-1">
+                    <div className="flex items-center gap-1">
                       <Image
                         src={`/images/icons/${
                           section.path + "/" + framework.icon
                         }.svg`}
                         alt={framework.name}
                         loading="lazy"
-                        width={32}
-                        height={32}
-                        className="rounded-full bg-white p-1"
+                        width={28}
+                        height={28}
+                        className="rounded-full bg-white p-1 md:w-8 md:h-8"
                       />
-                      <p>{framework.name}</p>
+                      <p className="text-xs md:text-sm">{framework.name}</p>
                     </div>
                   </Link>
                 </Button>
