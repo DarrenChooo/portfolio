@@ -21,7 +21,7 @@ export default function RootLayout({
         <body className={cn(inter.className, "antialiased")}>
         <div className="px-4 sm:px-6 lg:px-12 xl:px-16">
           <Navbar />
-          <main className="w-full max-w-screen-xl mx-auto lg:px-12 lg:py-16 md:my-8 flex items-center">
+          <main className="w-full max-w-screen-xl mx-auto lg:px-12 md:py-16 py-8 md:my-8 flex items-center">
             {children}
           </main>
         </div>

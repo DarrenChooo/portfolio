@@ -159,16 +159,15 @@ export default function Home() {
       </div>
 
       {/* REPOSITORIES */}
-      <div className="pt-12">
-        <div className="flex flex-wrap items-center mb-8">
-          <hr className="w-7 h-0.5 lg:h-1 lg:mt-3 mb-3 bg-lightblue border-0 rounded" />
-
-          <h1 className="text-3xl lg:text-5xl font-title lg:px-4">
+      <div className="md:pt-12 pt-4">
+        <div className="flex flex-col lg:flex-row pt-3 md:mb-8 mb-5">
+          <h1 className="text-3xl lg:text-5xl font-title font-semibold lg:font-normal order-1 lg:order-2 lg:px-4">
             My Repositories
           </h1>
-        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 items-stretch">
+          <hr className="w-7 h-0.5 lg:h-1 mt-2 lg:mt-3 bg-lightblue border-0 rounded order-2 lg:order-1" />
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10 items-stretch">
           {" "}
           {repositories.map((repo) => (
             <RepoCard key={repo.id} {...repo} />
