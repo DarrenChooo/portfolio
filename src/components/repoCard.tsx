@@ -38,7 +38,7 @@ export const RepoCard = ({
         </CardTitle>
 
         {/* FIXED HEIGHT DESCRIPTION */}
-        <CardDescription className="leading-relaxed text-muted-foreground line-clamp-3 min-h-[80px]">
+        <CardDescription className="leading-relaxed text-muted-foreground line-clamp-3 min-h-[80px] text-justify">
           {description ?? "No description"}
         </CardDescription>
       </CardHeader>

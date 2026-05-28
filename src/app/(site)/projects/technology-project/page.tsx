@@ -2,33 +2,11 @@
 
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import { Project, ProjProps } from "../../../../components/project";
+import { Project } from "@/components/project";
+import { projArr } from "@/data/project/technology";
 import { RepoCard, RepoCardProps } from "../../../../components/repoCard";
 import { Octokit } from "octokit";
 require("dotenv").config(); // Load environment variables from .env
-
-const projArr: Omit<ProjProps, "index">[] = [
-  {
-    title: "Personal Portfolio Project",
-    desc: "A client's minimalist portfolio website, showcasing her works and milestones. This website is developed with TypeScript and Tailwind CSS, and deployed on Vercel, presenting a glimpse into her personal and professional journey.",
-    demoUrl: "https://sarah-portfolio-sable.vercel.app/",
-    repoUrl: "https://github.com/DarrenCampy/sarahPortfolio",
-    imageUrl: "/images/projects/portfolio.png",
-  },
-  {
-    title: "2D Adventure Game ",
-    desc: "A project based on using PixiJS to create rich and interactive graphics for simple game development. The game is a 2D platformer with a simple storyline, and it is developed with JavaScript and HTML5 Canvas.",
-    demoUrl: "https://stardustneverland.onrender.com/user/react_floor.html",
-    repoUrl: "https://github.com/DarrenChooo/adventure-game",
-    imageUrl: "/images/projects/stardust.png",
-  },
-  {
-    title: "Vulnerability Penetration Testing",
-    desc: "A project testing our web penetration skills, where we are tasked to find vulnerabilities in a web application and exploit them. Also, migrating our local database onto cloud platforms such as AWS.",
-    repoUrl: "https://github.com/DarrenChooo/vulnerability-testing",
-    imageUrl: "/images/projects/esde.png",
-  },
-];
 
 const octokit = new Octokit({
   auth: process.env.GITHUB_TOKEN,
@@ -111,7 +89,7 @@ export default function Home() {
 
             <hr className="w-7 h-0.5 bg-lightblue border-0 rounded" />
 
-            <p className="text-xs text-gray-500 leading-relaxed max-w-xs">
+            <p className="text-xs text-gray-500 max-w-xs">
               Explore the projects I have developed throughout my journey in
               software development, ranging from web applications to interactive
               experiences and cybersecurity projects that strengthened my
