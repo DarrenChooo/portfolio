@@ -19,7 +19,7 @@ timeline,
 return (
     <div className="w-full pb-2">
     {/* HERO */}
-    <div className="flex flex-col lg:flex-row items-center lg:pb-24">
+    <div className="flex flex-col lg:flex-row items-center lg:pb-24 -mt-4">
         {/* LEFT */}
         <div className="flex flex-col basis-full lg:basis-7/12 space-y-6">
         {/* Desktop title */}
