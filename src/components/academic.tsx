@@ -4,7 +4,7 @@ import { achievementsData, educationData } from "./academicData";
 const Academic: React.FC = () => {
   return (
     <>
-      <p className="md:text-4xl text-3xl font-title lg:pt-16 lg:pb-4 pt-6 font-semibold">
+      <p className="md:text-4xl text-3xl font-title lg:pt-16 lg:pb-4 pt-8 font-semibold">
         Education
       </p>
       {educationData.map((education, index) => (
@@ -24,7 +24,7 @@ const Academic: React.FC = () => {
           </div>
         </div>
       ))}
-      <p className="md:text-4xl text-3xl font-title lg:pt-16 lg:pb-4 pt-4 font-semibold">
+      <p className="md:text-4xl text-3xl font-title lg:pt-16 lg:pb-4 pt-8 font-semibold">
         Achievements
       </p>
       {achievementsData.map((achievement, index) => (

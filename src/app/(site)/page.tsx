@@ -75,7 +75,7 @@ export default function Home() {
   }
 
   return (
-    <div className="w-full lg:space-y-0 space-y-4 px-2 pb-2">
+    <div className="w-full lg:space-y-0 space-y-4  pb-2">
       <div className="flex flex-col lg:flex-row items-center">
         <div className="flex flex-col basis-full lg:basis-7/12 space-y-2 lg:space-y-6">
           {/* Desktop Layout */}
@@ -135,7 +135,7 @@ export default function Home() {
           <div className="flex flex-wrap text-justify text-wrap">
             <hr className="w-7 h-1 mt-3 bg-lightblue border-0 rounded hidden lg:block" />
 
-            <p className="text-base sm:text-lg hidden md:block lg:px-4 text-wrap basis-full lg:basis-[85%] pt-2 lg:pt-0">
+            <p className="text-base sm:text-lg hidden md:block lg:px-4 text-wrap basis-full lg:basis-[80%] pt-2 lg:pt-0">
               Passionate about developing AI-powered applications that transform
               complex data into meaningful, real-world solutions for informed
               decision-making and innovation.

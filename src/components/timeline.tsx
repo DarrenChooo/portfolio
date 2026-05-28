@@ -68,7 +68,7 @@ export const Timeline: FC<TimelineProps> = ({
           )}
 
           <Card className="w-full">
-            <CardHeader className="pb-2">
+            <CardHeader className="pb-2 space-y-4">
               <CardTitle className="text-base leading-snug">{title}</CardTitle>
 
               {/* Image carousel */}
@@ -98,7 +98,7 @@ export const Timeline: FC<TimelineProps> = ({
               </div>
             </CardHeader>
 
-            <CardContent className="text-xs leading-relaxed pt-0">
+            <CardContent className="text-xs leading-relaxed pt-5">
               {desc}
             </CardContent>
           </Card>
@@ -128,7 +128,7 @@ export const Timeline: FC<TimelineProps> = ({
           )}
         >
           <Card className="w-[470px]">
-            <CardHeader>
+            <CardHeader className="space-y-4">
               <CardTitle>{title}</CardTitle>
 
               <Carousel plugins={[plugin.current]}>

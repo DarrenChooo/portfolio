@@ -52,7 +52,7 @@ return (
         <div className="flex flex-wrap">
             <hr className="w-7 h-1 mt-3 bg-lightblue border-0 rounded hidden lg:block" />
 
-            <p className="hidden md:block lg:px-4 text-lg basis-full lg:basis-[85%] pt-2">
+            <p className="hidden md:block lg:px-4 text-lg basis-full lg:basis-[80%]">
             {description}
             </p>
         </div>

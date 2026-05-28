@@ -25,7 +25,7 @@ const projArr: Omit<ProjProps, "index">[] = [
   {
     title: "Vulnerability Penetration Testing",
     desc: "A project testing our web penetration skills, where we are tasked to find vulnerabilities in a web application and exploit them. Also, migrating our local database onto cloud platforms such as AWS.",
-    repoUrl: "https://github.com/DarrenChooo/vulnerabitly-testing",
+    repoUrl: "https://github.com/DarrenChooo/vulnerability-testing",
     imageUrl: "/images/projects/esde.png",
   },
 ];
@@ -41,12 +41,20 @@ export default function Home() {
     try {
       const response = await octokit.request("GET /users/{username}/repos", {
         username,
+        sort: "updated", // or "pushed"
+        direction: "desc", // latest first
+        per_page: 100,
         headers: {
           "X-GitHub-Api-Version": "2022-11-28",
         },
       });
 
-      const repos: RepoCardProps[] = response.data;
+      const repos = response.data.sort(
+        (a, b) =>
+          new Date(b.pushed_at ?? 0).getTime() -
+          new Date(a.pushed_at ?? 0).getTime(),
+      );
+
       setRepositories(repos);
     } catch (error) {
       console.error("Error fetching repositories:", error);
@@ -58,45 +66,110 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="px-16 py-8 space-y-32">
-      <div className="flex items-center justify-between">
-        <div className="flex flex-col basis-3/5 space-y-6">
-          <p className="text-2xl absolute -ml-10 -mt-3 -rotate-12 text-lightblue font-title">
-            Projects
-          </p>
-          <p className="text-7xl font-title pe-3">Technology Projects</p>
-          <div className="flex">
-            <hr className="w-7 h-1 mt-3 bg-lightblue border-0 rounded"></hr>
-            <p className="text-lg px-4 text-wrap basis-3/4">
-              Here are the projects that I have worked on through the start of
-              my journey as a developer, consisting a plethora of pursuits that
-              enabled me to explore various facets of software and web
-              development.
+    <div className="w-full pb-2 space-y-8 -mt-3">
+      {/* HERO SECTION */}
+      <div className="flex flex-col lg:flex-row items-center lg:pb-28">
+        {/* LEFT */}
+        <div className="flex flex-col basis-full lg:basis-7/12 space-y-2 lg:space-y-6">
+          {/* Desktop Layout */}
+          <div className="hidden md:block">
+            <p className="text-xl sm:text-2xl absolute -mt-7 -ml-6 -rotate-12 text-lightblue font-title">
+              Projects
+            </p>
+
+            <div className="flex flex-wrap">
+              <p className="text-[24px] lg:text-6xl font-title">
+                Technology Projects
+              </p>
+            </div>
+          </div>
+
+          {/* Mobile Layout */}
+          <div className="flex flex-col items-center text-center gap-[10px] lg:hidden">
+            <div className="relative flex justify-center items-center md:hidden mt-6 mb-3">
+              {/* Blue dashed circle */}
+              <div
+                className="rounded-full aspect-square absolute z-0 border-lightblue border-2 border-dashed w-28 h-28"
+                aria-hidden
+              />
+
+              {/* Image */}
+              <Image
+                src="/images/website.png"
+                alt="Technology Projects"
+                width={200}
+                height={200}
+                className="rounded-md shadow-lg w-32 z-10 object-cover"
+              />
+            </div>
+
+            <span className="text-xs font-medium bg-blue-50 text-lightblue px-3 py-1 rounded-full">
+              Projects
+            </span>
+
+            <h1 className="text-4xl font-title">Technology Projects</h1>
+
+            <hr className="w-7 h-0.5 bg-lightblue border-0 rounded" />
+
+            <p className="text-xs text-gray-500 leading-relaxed max-w-xs">
+              Explore the projects I have developed throughout my journey in
+              software development, ranging from web applications to interactive
+              experiences and cybersecurity projects that strengthened my
+              problem-solving and technical development skills.
+            </p>
+          </div>
+
+          {/* Desktop Description */}
+          <div className="flex flex-wrap text-justify text-wrap">
+            <hr className="w-7 h-1 mt-3 bg-lightblue border-0 rounded hidden lg:block" />
+
+            <p className="text-base sm:text-lg hidden md:block lg:px-4 text-wrap basis-full lg:basis-[80%] pt-2 lg:pt-0">
+              Explore the projects I have developed throughout my journey in
+              software development, ranging from web applications to interactive
+              experiences and cybersecurity projects that strengthened my
+              problem-solving and technical development skills.
             </p>
           </div>
         </div>
-        <div className="basis-5/12 relative flex justify-center items-center mt-8">
-          <div
-            className="rounded-full h-[120%] aspect-square absolute border-lightblue border-4 border-spacing-10 border-dashed -z-10"
-            role="presentation"
-            aria-hidden
-          />
-          <Image
-            src="/images/website.png"
-            alt="Picture of My Website"
-            width={500}
-            height={500}
-            className="rounded-md shadow-lg "
-          />
+
+        {/* RIGHT IMAGE */}
+        <div className="lg:basis-5/12 pl-12 hidden md:block">
+          <div className="relative flex justify-center items-center mt-8">
+            <div
+              className="rounded-full h-[120%] aspect-square absolute z-0 border-lightblue border-4 border-dashed"
+              aria-hidden
+            />
+
+            <Image
+              src="/images/website.png"
+              alt="Technology Projects"
+              width={420}
+              height={420}
+              className="rounded-md shadow-lg w-28 lg:w-[90%] z-10 object-cover"
+            />
+          </div>
         </div>
       </div>
-      {projArr.map((proj, index) => (
-        <Project key={index} index={index} {...proj} />
-      ))}
 
-      <div>
-        <h1 className="text-3xl font-semibold pb-12">My repositories</h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {/* PROJECTS */}
+      <div className="space-y-8 lg:space-y-24">
+        {projArr.map((proj, index) => (
+          <Project key={index} index={index} {...proj} />
+        ))}
+      </div>
+
+      {/* REPOSITORIES */}
+      <div className="pt-12">
+        <div className="flex flex-wrap items-center mb-8">
+          <hr className="w-7 h-0.5 lg:h-1 lg:mt-3 mb-3 bg-lightblue border-0 rounded" />
+
+          <h1 className="text-3xl lg:text-5xl font-title lg:px-4">
+            My Repositories
+          </h1>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 items-stretch">
+          {" "}
           {repositories.map((repo) => (
             <RepoCard key={repo.id} {...repo} />
           ))}

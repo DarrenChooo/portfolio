@@ -13,7 +13,7 @@ import {
 const Skills: React.FC = () => {
   return (
     <div>
-      <div className="lg:py-8 py-3">
+      <div className="py-3">
         <p className="md:text-4xl text-3xl font-title md:mb-4 font-semibold">
           Technical Skills
         </p>
@@ -46,7 +46,7 @@ const Skills: React.FC = () => {
           </div>
         ))}
       </div>
-      <div className="lg:py-8 py-3">
+      <div className="py-3">
         <p className="md:text-4xl text-3xl font-title lg:mb-4 sm:mb-2 lg:mt-0 mt-5 font-semibold">Design Skills</p>
         {designSkillsData.map((section: SkillProps) => (
           <div key={section.section} className="flex flex-col lg:py-5 py-4">
