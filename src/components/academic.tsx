@@ -8,7 +8,7 @@ const Academic: React.FC = () => {
         Education
       </p>
       {educationData.map((education, index) => (
-        <div key={index}>
+        <div className="mb-6" key={index}>
           <hr className="w-auto h-0.5 mt-4 md:mb-3 mb-1 bg-lightblue border-0 rounded" />{" "}
           <div className="md:py-3 md:space-y-4 space-y-2">
             <div className="flex justify-between text-lg font-semibold ">
@@ -24,11 +24,12 @@ const Academic: React.FC = () => {
           </div>
         </div>
       ))}
+      
       <p className="md:text-4xl text-3xl font-title lg:pt-16 lg:pb-4 pt-8 font-semibold">
         Achievements
       </p>
       {achievementsData.map((achievement, index) => (
-        <div key={index}>
+        <div className="mb-6" key={index}>
           <hr className="w-auto h-0.5 mt-4 md:mb-3 mb-1 bg-lightblue border-0 rounded" />{" "}
           <div className="md:py-3 md:space-y-4 space-y-2">
             <div className="flex justify-between text-lg font-semibold ">
