@@ -1,6 +1,6 @@
 "use client";
 
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import Autoplay from "embla-carousel-autoplay";
@@ -18,6 +18,7 @@ import {
   CarouselItem,
   CarouselPrevious,
   CarouselNext,
+  type CarouselApi,
 } from "./ui/carousel";
 
 export type TimelineProps = {
@@ -43,24 +44,31 @@ export const Timeline: FC<TimelineProps> = ({
     Autoplay({ delay: 2000, stopOnInteraction: true }),
   );
 
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+
+  React.useEffect(() => {
+    if (!api) return;
+    setCurrent(api.selectedScrollSnap());
+    api.on("select", () => setCurrent(api.selectedScrollSnap()));
+  }, [api]);
+
+  const images = [imageUrl].flat();
   const isEven = index % 2 === 0;
 
   return (
     <>
-      {/* ── MOBILE layout (< md) ─────────────────────────────────────
-          Left-aligned spine, full-width card, year inside card         */}
+      {/* ── MOBILE layout (< md) ───────────────────────────────────── */}
       <div className="flex md:hidden relative pb-6">
-        {/* Vertical spine line — left edge */}
+        {/* Vertical spine line */}
         <div className="absolute left-3 top-0 bottom-0 w-0.5 bg-lightblue2" />
 
         {/* Dot on the spine */}
         {endYr && (
-          <div className="z-20 absolute left-[5px]  w-4 h-4 border-[3px] border-lightblue bg-lightblue rounded-full flex-shrink-0" />
+          <div className="z-20 absolute left-[5px] w-4 h-4 border-[3px] border-lightblue bg-lightblue rounded-full flex-shrink-0" />
         )}
 
-        {/* Card — offset to the right of the spine */}
         <div className="ml-8 w-full">
-          {/* Year tag above the card when present */}
           {endYr && (
             <span className="inline-block text-sm mb-4 font-semibold text-orange-400">
               {endYr}
@@ -71,25 +79,48 @@ export const Timeline: FC<TimelineProps> = ({
             <CardHeader className="pb-2 space-y-4">
               <CardTitle className="text-base leading-snug">{title}</CardTitle>
 
-              {/* Image carousel */}
-              <Carousel plugins={[plugin.current]} className="w-full">
-                <CarouselContent>
-                  {[imageUrl].flat().map((url, i) => (
-                    <CarouselItem key={i}>
-                      <Image
-                        src={url}
-                        alt={`${title} image ${i + 1}`}
-                        width={700}
-                        height={700}
-                        style={{ width: "100%", height: "180px" }}
-                        className="rounded-md shadow object-cover"
-                      />
-                    </CarouselItem>
-                  ))}
-                </CarouselContent>
-              </Carousel>
+              {/* Mobile carousel — swipeable + dot indicators */}
+              <div className="flex flex-col">
+                <Carousel
+                  plugins={[plugin.current]}
+                  className="w-full"
+                  setApi={setApi}
+                >
+                  <CarouselContent>
+                    {images.map((url, i) => (
+                      <CarouselItem key={i}>
+                        <Image
+                          src={url}
+                          alt={`${title} image ${i + 1}`}
+                          width={700}
+                          height={700}
+                          style={{ width: "100%", height: "180px" }}
+                          className="rounded-md shadow object-cover"
+                        />
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+                </Carousel>
 
-              {/* Position + date row */}
+                {/* Dot indicators — only show when there's more than 1 image */}
+                {images.length > 1 && (
+                  <div className="flex justify-center gap-1.5 pt-2">
+                    {images.map((_, i) => (
+                      <button
+                        key={i}
+                        onClick={() => api?.scrollTo(i)}
+                        aria-label={`Go to image ${i + 1}`}
+                        className={`rounded-full transition-all duration-200 ${
+                          i === current
+                            ? "w-4 h-1.5 bg-lightblue"
+                            : "w-1.5 h-1.5 bg-gray-300"
+                        }`}
+                      />
+                    ))}
+                  </div>
+                )}
+              </div>
+
               <div className="flex justify-between pt-1 gap-2 flex-wrap">
                 <CardDescription className="text-lightblue text-xs">
                   {position}
@@ -105,8 +136,7 @@ export const Timeline: FC<TimelineProps> = ({
         </div>
       </div>
 
-      {/* ── DESKTOP layout (≥ md) ────────────────────────────────────
-          Original alternating center-spine layout, cleaned up          */}
+      {/* ── DESKTOP layout (≥ md) ──────────────────────────────────── */}
       <div className="hidden md:flex basis-full relative pb-8">
         {/* Vertical spine — center */}
         <div
@@ -114,11 +144,10 @@ export const Timeline: FC<TimelineProps> = ({
           style={{ left: "50%" }}
         />
 
-        {/* Dot on the spine */}
         {endYr && (
           <div className="z-20 absolute left-1/2 -translate-x-[calc(50%-2px)] w-6 h-6 border-4 border-lightblue bg-lightblue rounded-full" />
         )}
-        {/* Card — alternates left/right */}
+
         <div
           className={cn(
             "w-full flex",
@@ -131,9 +160,10 @@ export const Timeline: FC<TimelineProps> = ({
             <CardHeader className="space-y-4">
               <CardTitle>{title}</CardTitle>
 
+              {/* Desktop carousel — prev/next buttons */}
               <Carousel plugins={[plugin.current]}>
                 <CarouselContent>
-                  {[imageUrl].flat().map((url, i) => (
+                  {images.map((url, i) => (
                     <CarouselItem key={i}>
                       <Image
                         src={url}
@@ -146,6 +176,12 @@ export const Timeline: FC<TimelineProps> = ({
                     </CarouselItem>
                   ))}
                 </CarouselContent>
+                {images.length > 1 && (
+                  <>
+                    <CarouselPrevious />
+                    <CarouselNext />
+                  </>
+                )}
               </Carousel>
 
               <div className="flex justify-between">
@@ -160,7 +196,6 @@ export const Timeline: FC<TimelineProps> = ({
           </Card>
         </div>
 
-        {/* Year label — floats on the opposite side of the card */}
         {endYr && (
           <div
             className={cn(
